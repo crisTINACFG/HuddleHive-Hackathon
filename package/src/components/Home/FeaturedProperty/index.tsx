@@ -93,7 +93,7 @@ const FeaturedProperty: React.FC = () => {
               <div className="flex items-center gap-4">
                 <div className="bg-dark/5 dark:bg-white/5 p-2.5 rounded-[6px]">
                   <Image
-                    src={'/images/hero/sofa.svg'}
+                    src={'/images/hero/sofa.png'}
                     alt='sofa'
                     width={24}
                     height={24}
@@ -114,7 +114,7 @@ const FeaturedProperty: React.FC = () => {
               <div className="flex items-center gap-4">
                 <div className="bg-dark/5 dark:bg-white/5 p-2.5 rounded-[6px]">
                   <Image
-                    src={'/images/hero/tube.svg'}
+                    src={'/images/hero/tube.png'}
                     alt='tube'
                     width={24}
                     height={24}
@@ -184,7 +184,7 @@ const FeaturedProperty: React.FC = () => {
                   £50
                 </h4>
                 <p className="text-base text-dark/50">
-                   Per hour
+                  Per hour
                 </p>
               </div>
             </div>
