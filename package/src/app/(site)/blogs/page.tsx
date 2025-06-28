@@ -11,8 +11,8 @@ const Blog = () => {
     return (
         <>
             <HeroSub
-                title="Real estate insights."
-                description="Stay ahead in the property market with expert advice and updates."
+                title="Connecting people to places"
+                description="Making places visible and accessible to communties."
                 badge="Blog"
             />
             <BlogList />

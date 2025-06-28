@@ -4,7 +4,7 @@ const Logo: React.FC = () => {
   return (
     <>
       <Image
-        src={'/images/header/dark-logo.svg'}
+        src={'/images/header/dark-logo.png'}
         alt='logo'
         width={150}
         height={68}

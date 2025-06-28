@@ -10,9 +10,9 @@ const page = () => {
     return (
         <>
             <HeroSub
-                title="Discover inspiring designed homes."
-                description="Experience elegance and comfort with our exclusive luxury  villas, designed for sophisticated living."
-                badge="Properties"
+                title="Discover inspiring places."
+                description="Experience venues perfect for any events"
+                badge="Venues"
             />
             <PropertiesListing />
         </>
