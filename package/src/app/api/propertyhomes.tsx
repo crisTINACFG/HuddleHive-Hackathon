@@ -2,210 +2,93 @@ import { PropertyHomes } from '@/types/properyHomes'
 
 export const propertyHomes: PropertyHomes[] = [
   {
-    name: 'Serenity height villas',
-    slug: 'serenity-height-villas',
-    location: '15 s aurora ave, miami',
-    rate: '570,000',
-    beds: 4,
-    baths: 3,
-    area: 120,
-    images: [
-      {
-        src: "/images/properties/property1/property1.jpg",
-      },
-      {
-        src: "/images/properties/property1/image-2.jpg"
-      },
-      {
-        src: "/images/properties/property1/image-3.jpg"
-      },
-      {
-        src: "/images/properties/property1/image-4.jpg"
-      },
-    ]
+    name: 'Wembley Stadium',
+    slug: 'wembley-stadium',
+    location: 'Wembley, London HA9 0WS, UK',
+    price: '25000',
+    capacity: 90000,
+    images: [{ src: '/images/properties/placeholder.jpg' }],
+    category: 'sports'
   },
   {
-    name: 'Mountain retreat villa',
-    slug: 'mountain-retreat-villa',
-    location: '18 s aurora ave, miami',
-    rate: '575,000',
-    beds: 5,
-    baths: 2,
-    area: 150,
-    images: [
-      {
-        src: "/images/properties/property2/property2.jpg",
-      },
-      {
-        src: "/images/properties/property2/image-2.jpg"
-      },
-      {
-        src: "/images/properties/property2/image-3.jpg"
-      },
-      {
-        src: "/images/properties/property2/image-4.jpg"
-      },
-    ]
+    name: 'The British Museum',
+    slug: 'the-british-museum',
+    location: 'Great Russell St, Bloomsbury, London WC1B 3DG, UK',
+    price: '4000',
+    capacity: 1500,
+    images: [{ src: '/images/properties/placeholder.jpg' }],
+    category: 'educational'
   },
   {
-    name: 'Modern luxe villa',
-    slug: 'modern-luxe-villa',
-    location: '20 s aurora ave, miami',
-    rate: '580,000',
-    beds: 3,
-    baths: 4,
-    area: 180,
-    images: [
-      {
-        src: "/images/properties/property3/property3.jpg",
-      },
-      {
-        src: "/images/properties/property3/image-2.jpg"
-      },
-      {
-        src: "/images/properties/property3/image-3.jpg"
-      },
-      {
-        src: "/images/properties/property3/image-4.jpg"
-      },
-    ]
+    name: 'The O2 Arena',
+    slug: 'the-o2-arena',
+    location: 'Peninsula Square, Greenwich, London SE10 0DX, UK',
+    price: '15000',
+    capacity: 20000,
+    images: [{ src: '/images/properties/placeholder.jpg' }],
+    category: 'event'
   },
   {
-    name: 'Royal orchid villas',
-    slug: 'royal-orchid-villas',
-    location: '12 emerald heights, los angeles',
-    rate: '590,000',
-    beds: 6,
-    baths: 3,
-    area: 200,
-    images: [
-      {
-        src: "/images/properties/property4/property4.jpg",
-      },
-      {
-        src: "/images/properties/property4/image-2.jpg"
-      },
-      {
-        src: "/images/properties/property4/image-3.jpg"
-      },
-      {
-        src: "/images/properties/property4/image-4.jpg"
-      },
-    ]
+    name: 'Royal Albert Hall',
+    slug: 'royal-albert-hall',
+    location: 'Kensington Gore, London SW7 2AP, UK',
+    price: '12000',
+    capacity: 5000,
+    images: [{ src: '/images/properties/placeholder.jpg' }],
+    category: 'entertainment'
   },
   {
-    name: 'Grand vista villas',
-    slug: 'grand-cista-villas',
-    location: '25 skyline boulevard, san diego',
-    rate: '710,000',
-    beds: 2,
-    baths: 1,
-    area: 90,
-    images: [
-      {
-        src: "/images/properties/property5/property5.jpg",
-      },
-      {
-        src: "/images/properties/property5/image-2.jpg"
-      },
-      {
-        src: "/images/properties/property5/image-3.jpg"
-      },
-      {
-        src: "/images/properties/property5/image-4.jpg"
-      },
-    ]
+    name: 'Hyde Park',
+    slug: 'hyde-park',
+    location: 'London W2 2UH, UK',
+    price: '0',
+    capacity: 35000,
+    images: [{ src: '/images/properties/placeholder.jpg' }],
+    category: 'outdoor'
   },
   {
-    name: 'Imperial pearl villas',
-    slug: 'imperial-pearn-villas',
-    location: '18 sapphire bay road, naples',
-    rate: '630,000',
-    beds: 4,
-    baths: 2,
-    area: 130,
-    images: [
-      {
-        src: "/images/properties/property6/property6.jpg",
-      },
-      {
-        src: "/images/properties/property6/image-2.jpg"
-      },
-      {
-        src: "/images/properties/property6/image-3.jpg"
-      },
-      {
-        src: "/images/properties/property6/image-4.jpg"
-      },
-    ]
+    name: 'Manchester Central Convention Complex',
+    slug: 'manchester-central-convention-complex',
+    location: 'Peter St, Manchester M2 3GX, UK',
+    price: '5000',
+    capacity: 2500,
+    images: [{ src: '/images/properties/placeholder.jpg' }],
+    category: 'corporate'
   },
   {
-    name: 'Opulent haven villas',
-    slug: 'opulent-heven-villas',
-    location: '22 ocean breeze drive, malibu',
-    rate: '620,000',
-    beds: 6,
-    baths: 3,
-    area: 180,
-    images: [
-      {
-        src: "/images/properties/property7.jpg",
-      },
-      {
-        src: "/images/properties/property9.jpg"
-      },
-      {
-        src: "/images/properties/property2.jpg"
-      },
-      {
-        src: "/images/properties/property5.jpg"
-      },
-    ]
+    name: 'Edinburgh Castle',
+    slug: 'edinburgh-castle',
+    location: 'Castlehill, Edinburgh EH1 2NG, UK',
+    price: '7000',
+    capacity: 1000,
+    images: [{ src: '/images/properties/placeholder.jpg' }],
+    category: 'event'
   },
   {
-    name: 'Elite crest villas',
-    slug: 'elite-crest-villas',
-    location: '10 palm view lane, beverly hills',
-    rate: '750,000',
-    beds: 4,
-    baths: 3,
-    area: 150,
-    images: [
-      {
-        src: "/images/properties/property8.jpg",
-      },
-      {
-        src: "/images/properties/property2.jpg"
-      },
-      {
-        src: "/images/properties/property4.jpg"
-      },
-      {
-        src: "/images/properties/property7.jpg"
-      },
-    ]
+    name: 'Bristol Harbourside',
+    slug: 'bristol-harbourside',
+    location: 'Bristol BS1 5TX, UK',
+    price: '3000',
+    capacity: 800,
+    images: [{ src: '/images/properties/placeholder.jpg' }],
+    category: 'outdoor'
   },
   {
-    name: 'Majestic bay villas',
-    slug: 'majestic-bay-villas',
-    location: '8 sunset cove, miami beach',
-    rate: '680,000',
-    beds: 4,
-    baths: 2,
-    area: 120,
-    images: [
-      {
-        src: "/images/properties/property9.jpg",
-      },
-      {
-        src: "/images/properties/property3.jpg"
-      },
-      {
-        src: "/images/properties/property5.jpg"
-      },
-      {
-        src: "/images/properties/property9.jpg"
-      },
-    ]
+    name: 'University of Oxford',
+    slug: 'university-of-oxford',
+    location: 'Oxford OX1 2JD, UK',
+    price: '6000',
+    capacity: 2000,
+    images: [{ src: '/images/properties/placeholder.jpg' }],
+    category: 'educational'
   },
+  {
+    name: 'Barbican Centre',
+    slug: 'barbican-centre',
+    location: 'Silk St, London EC2Y 8DS, UK',
+    price: '8000',
+    capacity: 2000,
+    images: [{ src: '/images/properties/placeholder.jpg' }],
+    category: 'entertainment'
+  }
 ]

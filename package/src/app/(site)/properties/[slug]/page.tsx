@@ -25,25 +25,21 @@ export default function Details() {
                     <div className="lg:col-span-4 col-span-12">
                         <div className='flex'>
                             <div className='flex flex-col gap-2 border-e border-black/10 dark:border-white/20 pr-2 xs:pr-4 mobile:pr-8'>
-                                <Icon icon={'solar:bed-linear'} width={20} height={20} />
+                                <Icon icon={'solar:tag-price-bold'} width={20} height={20} />
                                 <p className='text-sm mobile:text-base font-normal text-black dark:text-white'>
-                                    {item?.beds} Bedrooms
+                                    Price<br />£{item?.price}
                                 </p>
                             </div>
                             <div className='flex flex-col gap-2 border-e border-black/10 dark:border-white/20 px-2 xs:px-4 mobile:px-8'>
-                                <Icon icon={'solar:bath-linear'} width={20} height={20} />
+                                <Icon icon={'solar:users-group-rounded-bold'} width={20} height={20} />
                                 <p className='text-sm mobile:text-base font-normal text-black dark:text-white'>
-                                    {item?.baths} Bathrooms
+                                    Capacity<br />{item?.capacity}
                                 </p>
                             </div>
                             <div className='flex flex-col gap-2 pl-2 xs:pl-4 mobile:pl-8'>
-                                <Icon
-                                    icon={'lineicons:arrow-all-direction'}
-                                    width={20}
-                                    height={20}
-                                />
+                                <span style={{fontSize: '20px'}}>✔</span>
                                 <p className='text-sm mobile:text-base font-normal text-black dark:text-white'>
-                                    {item?.area}m<sup>2</sup>
+                                    Category<br />{item?.category}
                                 </p>
                             </div>
                         </div>
@@ -139,7 +135,7 @@ export default function Details() {
                             <p className='text-dark dark:text-white text-xm '>
                                 The primary suite serves as a private retreat with a spa-like ensuite bathroom and a spacious walk-in closet.
                                 each additional bedroom is thoughtfully designed with comfort and style in mind, offering ample space and modern
-                                finishes. the home’s three bathrooms feature high-end fixtures, custom vanities, and elegant tiling.
+                                finishes. the home's three bathrooms feature high-end fixtures, custom vanities, and elegant tiling.
                             </p>
                             <p className='text-dark dark:text-white text-xm '>
                                 Outdoor living is equally impressive, with a beautifully landscaped backyard, multiple lounge areas,
@@ -176,14 +172,19 @@ export default function Details() {
                             </div>
                         </div>
                         <iframe
-                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d938779.7831767448!2d71.05098621661072!3d23.20271516446136!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x395e82dd003ff749%3A0x359e803f537cea25!2sGANESH%20GLORY%2C%20Gota%2C%20Ahmedabad%2C%20Gujarat%20382481!5e0!3m2!1sen!2sin!4v1715676641521!5m2!1sen!2sin"
-                            width="1114" height="400" loading="lazy" referrerPolicy="no-referrer-when-downgrade" className="rounded-2xl w-full">
-                        </iframe>
+                            src={`https://www.google.com/maps?q=${encodeURIComponent(item?.location ?? '')}&output=embed`}
+                            width="1114"
+                            height="400"
+                            loading="lazy"
+                            referrerPolicy="no-referrer-when-downgrade"
+                            className="rounded-2xl w-full"
+                            title="Venue Location"
+                        ></iframe>
                     </div>
                     <div className="lg:col-span-4 col-span-12">
                         <div className="bg-primary/10 p-8 rounded-2xl relative z-10 overflow-hidden">
                             <h4 className='text-dark text-3xl font-medium dark:text-white'>
-                                {item?.rate}
+                                £{item?.price}
                             </h4>
                             <p className='text-sm text-dark/50 dark:text-white'>Discounted Price</p>
                             <Link href="#" className='py-4 px-8 bg-primary text-white rounded-full w-full block text-center hover:bg-dark duration-300 text-base mt-8 hover:cursor-pointer'>
