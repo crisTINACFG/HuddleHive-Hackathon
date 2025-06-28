@@ -1,7 +1,30 @@
+'use client'
+
 import Image from 'next/image'
 import Link from 'next/link'
+import { useEffect, useState } from 'react'
+import { supabase } from '@/lib/supabaseClient'
 
 const Hero: React.FC = () => {
+  const [heroImgUrl, setHeroImgUrl] = useState<string | null>(null)
+  const [loading, setLoading] = useState(true)
+
+  useEffect(() => {
+    const fetchHeroImage = async () => {
+      // Make sure the column name matches your Supabase table (e.g., 'url' or 'photoURL')
+      const { data, error } = await supabase
+        .from('venue-photos')
+        .select('photoURL')
+        .eq('venue_id', 1)
+        .limit(1)
+      if (data && data.length > 0 && data[0].photoURL) {
+        setHeroImgUrl(data[0].photoURL)
+      }
+      setLoading(false)
+    }
+    fetchHeroImage()
+  }, [])
+
   return (
     <section className='!py-0'>
       <div className='bg-gradient-to-b from-skyblue via-lightskyblue dark:via-[#4298b0] to-white/10 dark:to-black/10 overflow-hidden relative'>
@@ -21,14 +44,27 @@ const Hero: React.FC = () => {
             </div>
           </div>
           <div className='hidden md:block absolute -top-2 -right-68'>
-            <Image
-              src={'/images/hero/heroBanner.png'}
-              alt='heroImg'
-              width={1082}
-              height={1016}
-              priority={false}
-              unoptimized={true}
-            />
+            {loading ? (
+              <div style={{ width: 1082, height: 1016, background: '#eee' }} />
+            ) : heroImgUrl ? (
+              <Image
+                src={heroImgUrl}
+                alt='heroImg'
+                width={1082}
+                height={1016}
+                priority={false}
+                unoptimized={true}
+              />
+            ) : (
+              <Image
+                src={'/images/hero/heroBanner.png'}
+                alt='heroImg'
+                width={1082}
+                height={1016}
+                priority={false}
+                unoptimized={true}
+              />
+            )}
           </div>
         </div>
         <div className='md:absolute bottom-0 md:-right-68 xl:right-0 bg-white dark:bg-black py-12 px-8 mobile:px-16 md:pl-16 md:pr-[295px] rounded-2xl md:rounded-none md:rounded-tl-2xl mt-24'>
