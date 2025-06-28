@@ -13,21 +13,21 @@ export const propertyHomes: PropertyHomes[] = [
       { src: '/images/properties/property4/pad1.jpg' },
       { src: '/images/properties/property4/pad4.jpg' }
   ],
-    category: 'coorporate'
+    category: 'office'
   },
   {
-    name: 'Wembley Stadium',
-    slug: 'wembley-stadium',
-    location: 'Wembley, London HA9 0WS, UK',
-    price: '25000',
-    capacity: 90000,
+    name: 'Monmouth Coffee',
+    slug: 'monmouth-coffee',
+    location: '27 Monmouth St, Covent Garden, London WC2H 9EU, UK',
+    price: '400',
+    capacity: 60,
     images: [
-      { src: '/images/properties/property1/Wembley1.jpg' },
-      { src: '/images/properties/property1/Wembley2.jpg' },
-      { src: '/images/properties/property1/Wembley3.jpg' },
-      { src: '/images/properties/property1/Wembley4.jpg' }
+      { src: '/images/properties/property1/mon2.jpg' },
+      { src: '/images/properties/property1/mon1.jpg' },
+      { src: '/images/properties/property1/mon3.jpg' },
+      { src: '/images/properties/property1/mon4.jpg' }
     ],
-    category: 'sports'
+    category: 'Cafe'
   },
   {
     name: 'The British Museum',
@@ -41,21 +41,21 @@ export const propertyHomes: PropertyHomes[] = [
       { src: '/images/properties/property2/BM1.jpg' },
       { src: '/images/properties/property2/BM4.jpg' }
     ],
-    category: 'educational'
+    category: 'community hall'
   },
   {
-    name: 'The O2 Arena',
-    slug: 'the-o2-arena',
-    location: 'Peninsula Square, Greenwich, London SE10 0DX, UK',
+    name: 'University of Surrey',
+    slug: 'university-of-surrey',
+    location: 'Guildford, Surrey GU2 7XH, UK',
     price: '15000',
-    capacity: 20000,
+    capacity: 3000,
     images:  [
-      { src: '/images/properties/property3/O2-3.jpg' },
-      { src: '/images/properties/property3/O  2-1.jpg' },
-      { src: '/images/properties/property3/02-2.jpg' },
-      { src: '/images/properties/property3/02-4.jpg' }
+      { src: '/images/properties/property3/sur1.jpg' },
+      { src: '/images/properties/property3/sur2.jpg' },
+      { src: '/images/properties/property3/sur3.jpg' },
+      { src: '/images/properties/property3/sur4.jpg' }
   ],
-    category: 'event'
+    category: 'univeristy'
   },
   
   {
@@ -64,52 +64,41 @@ export const propertyHomes: PropertyHomes[] = [
     location: 'London W2 2UH, UK',
     price: '0',
     capacity: 35000,
-    images: [{ src: '/images/properties/placeholder.jpg' }],
-    category: 'outdoor'
+    images: [
+      { src: '/images/properties/property5/hyde1.jpg' },
+      { src: '/images/properties/property5/hyde2.jpg' },
+      { src: '/images/properties/property5/hyde3.jpg' },
+      { src: '/images/properties/property5/hyde4.jpg' }  
+    ],
+    category: 'community hall'
   },
   {
-    name: 'Manchester Central Convention Complex',
-    slug: 'manchester-central-convention-complex',
-    location: 'Peter St, Manchester M2 3GX, UK',
-    price: '5000',
-    capacity: 2500,
-    images: [{ src: '/images/properties/placeholder.jpg' }],
-    category: 'corporate'
+    name: 'Google Campus London',
+    slug: 'google-campus-london',
+    location: '4-5 Bonhill St, London EC2A 4BX, UK',
+    price: '1500',
+    capacity: 500,
+    images: [
+      { src: '/images/properties/property6/gog1.jpg' },
+      { src: '/images/properties/property6/gog2.jpg' },
+      { src: '/images/properties/property6/gog3.jpg' },
+      { src: '/images/properties/property6/gog4.jpg' }
+    ],
+    category: 'office '
   },
+  // beyond this point its actually events
   {
-    name: 'Edinburgh Castle',
-    slug: 'edinburgh-castle',
-    location: 'Castlehill, Edinburgh EH1 2NG, UK',
-    price: '7000',
-    capacity: 1000,
-    images: [{ src: '/images/properties/placeholder.jpg' }],
-    category: 'event'
+    name: 'HuddleHive Hackathon',
+    slug: 'huddle-hive-hackathon',
+    location: 'Octopus Energy (London), 5th Floor, United Kingdom House, 164-182 Oxford St, London W1D 1NN, UK',
+    price: '1500',
+    capacity: 500,
+    images: [
+      { src: '/images/properties/property6/gog1.jpg' },
+      { src: '/images/properties/property6/gog2.jpg' },
+      { src: '/images/properties/property6/gog3.jpg' },
+      { src: '/images/properties/property6/gog4.jpg' }
+    ],
+    category: 'office '
   },
-  {
-    name: 'Bristol Harbourside',
-    slug: 'bristol-harbourside',
-    location: 'Bristol BS1 5TX, UK',
-    price: '3000',
-    capacity: 800,
-    images: [{ src: '/images/properties/placeholder.jpg' }],
-    category: 'outdoor'
-  },
-  {
-    name: 'University of Oxford',
-    slug: 'university-of-oxford',
-    location: 'Oxford OX1 2JD, UK',
-    price: '6000',
-    capacity: 2000,
-    images: [{ src: '/images/properties/placeholder.jpg' }],
-    category: 'educational'
-  },
-  {
-    name: 'Barbican Centre',
-    slug: 'barbican-centre',
-    location: 'Silk St, London EC2Y 8DS, UK',
-    price: '8000',
-    capacity: 2000,
-    images: [{ src: '/images/properties/placeholder.jpg' }],
-    category: 'entertainment'
-  }
 ]

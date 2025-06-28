@@ -16,19 +16,19 @@ const Properties: React.FC = () => {
                 className='text-primary'
               />
             </span>
-            <p className='text-base font-semibold text-dark/75 dark:text-white/75'>
-              Venues
+            <p className='text-3xl font-semibold text-dark/75 dark:text-white/75'>
+              Events
             </p>
           </div>
           <h2 className='text-40 lg:text-52 font-medium text-black dark:text-white text-center tracking-tight leading-11 mb-2'>
-            Discover inspiring venues.
+            Find your next opportunity.
           </h2>
           <p className='text-xm font-normal text-black/50 dark:text-white/50 text-center'>
-            Curated venues to meet your styles.
+            Upcoming events and opportunities you can't miss out on!
           </p>
         </div>
         <div className='grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-10'>
-          {propertyHomes.slice(0, 6).map((item, index) => (
+          {propertyHomes.slice(6, 9).map((item, index) => (
             <div key={index} className=''>
               <PropertyCard item={item} />
             </div>

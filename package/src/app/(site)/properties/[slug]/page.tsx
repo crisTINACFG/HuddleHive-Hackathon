@@ -88,7 +88,7 @@ export default function Details() {
                                 <div>
                                     <h3 className='text-dark dark:text-white text-xm'>Property details</h3>
                                     <p className='text-base text-dark/50 dark:text-white/50'>
-                                        One of the few homes in the area with a private pool.
+                                        Paddington Works is a modern co-working space supporting startups and creative businesses in London.    
                                     </p>
                                 </div>
                             </div>

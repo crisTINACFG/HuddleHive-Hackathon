@@ -47,7 +47,7 @@ const Hero: React.FC = () => {
             </div>
             <div className='flex flex-col sm:items-center gap-3'>
               <Image
-                src={'/images/hero/tube.png'}
+                src={'/images/hero/event.svg'}
                 alt='sofa'
                 width={32}
                 height={32}
@@ -55,7 +55,7 @@ const Hero: React.FC = () => {
                 unoptimized={true}
               />
               <Image
-                src={'/images/hero/dark-tube.svg'}
+                src={'/images/hero/event.svg'}
                 alt='sofa'
                 width={32}
                 height={32}
@@ -68,7 +68,7 @@ const Hero: React.FC = () => {
             </div>
             <div className='flex flex-col sm:items-center gap-3'>
               <Image
-                src={'/images/hero/parking.svg'}
+                src={'/images/hero/networking.svg'}
                 alt='sofa'
                 width={32}
                 height={32}
@@ -76,7 +76,7 @@ const Hero: React.FC = () => {
                 unoptimized={true}
               />
               <Image
-                src={'/images/hero/dark-parking.svg'}
+                src={'/images/hero/networking.svg'}
                 alt='sofa'
                 width={32}
                 height={32}
@@ -89,7 +89,7 @@ const Hero: React.FC = () => {
             </div>
             <div className='flex flex-col sm:items-center gap-3'>
               <Image
-                src={'/images/hero/tube.png'}
+                src={'/images/hero/local.svg'}
                 alt='sofa'
                 width={32}
                 height={32}
@@ -97,7 +97,7 @@ const Hero: React.FC = () => {
                 unoptimized={true}
               />
               <Image
-                src={'/images/hero/dark-tube.svg'}
+                src={'/images/hero/local.svg'}
                 alt='sofa'
                 width={32}
                 height={32}
