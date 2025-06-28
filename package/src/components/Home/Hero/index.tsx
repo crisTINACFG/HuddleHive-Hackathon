@@ -11,14 +11,7 @@ const Hero: React.FC = () => {
             <h1 className='text-inherit text-6xl sm:text-9xl font-semibold -tracking-wider md:max-w-45p mt-4 mb-6'>
               Vibrant spaces
             </h1>
-            <div className='flex flex-col xs:flex-row justify-center md:justify-start gap-4'>
-              <Link href="/contactus" className='px-8 py-4 border border-white dark:border-dark bg-white dark:bg-dark text-dark dark:text-white duration-300 dark:hover:text-dark hover:bg-transparent hover:text-white text-base font-semibold rounded-full hover:cursor-pointer'>
-                Contact us
-              </Link>
-              <button className='px-8 py-4 border border-white dark:border-dark bg-transparent text-white dark:text-dark hover:bg-white dark:hover:bg-dark dark:hover:text-white hover:text-dark duration-300 text-base font-semibold rounded-full hover:cursor-pointer'>
-                View Details
-              </button>
-            </div>
+            
           </div>
           <div className='hidden md:block absolute -top-2 -right-68'>
             <Image
