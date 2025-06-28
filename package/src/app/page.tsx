@@ -13,11 +13,6 @@ export default function Home() {
       <Hero />
       <Services />
       <Properties />
-      <FeaturedProperty />
-      <Testimonial />
-      <BlogSmall />
-
-    
     </main>
   )
 }

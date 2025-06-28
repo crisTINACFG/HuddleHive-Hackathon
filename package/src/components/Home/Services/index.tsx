@@ -27,7 +27,7 @@ const Categories = () => {
         <div className="grid grid-cols-12 items-center gap-10">
           <div className="lg:col-span-6 col-span-12">
             <p className="text-dark/75 dark:text-white/75 text-base font-semibold flex gap-2.5">
-              <Icon icon="ph:house-simple-fill" className="text-2xl text-primary " />
+              <Icon icon="ph:buildings" className="text-2xl text-primary " />
               Categories
             </p>
             <h2 className="lg:text-52 text-40 mt-4 mb-2 lg:max-w-full font-medium leading-[1.2] text-dark dark:text-white">
@@ -35,7 +35,7 @@ const Categories = () => {
               with the best services.
             </h2>
             <p className="text-dark/50 dark:text-white/50 text-lg lg:max-w-full leading-[1.3] md:max-w-3/4">
-              Discover a diverse range of spaces tailored to your needs
+              Discover a diverse range of spaces tailored to your needs, whether its wheelchair accessibility, wifi or air conditioning. We have made it easy to find the perfect location, ensuring a comfortable and enjoyable experience for everyone.
             </p>
             <Link href="/properties" className="py-4 px-8 bg-primary text-base leading-4 block w-fit text-white rounded-full font-semibold mt-8 hover:bg-dark duration-300">
               View venues
