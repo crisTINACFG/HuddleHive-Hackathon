@@ -12,7 +12,7 @@ const Logo: React.FC = () => {
         className='dark:hidden'
       />
       <Image
-        src={'/images/header/logo.png'}
+        src={'/images/header/logo.svg'}
         alt='logo'
         width={150}
         height={68}

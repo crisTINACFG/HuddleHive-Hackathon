@@ -3,7 +3,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { Metadata } from "next";
 export const metadata: Metadata = {
-    title: "Contact Us | Homely",
+  title: "Contact Us | Homely",
 };
 
 export default function ContactUs() {
@@ -28,8 +28,7 @@ export default function ContactUs() {
             Have questions? ready to help!
           </h3>
           <p className='text-xm font-normal tracking-tight text-black/50 dark:text-white/50 leading-6'>
-            Looking for your dream home or ready to sell? Our expert team offers
-            personalized guidance and market expertise tailored to you.
+            We can help you connect to the perfect physical space for you.
           </p>
         </div>
       </div>
@@ -50,8 +49,7 @@ export default function ContactUs() {
                 Contact information
               </h5>
               <p className='text-sm xs:text-base mobile:text-xm font-normal text-white/80'>
-                Ready to find your dream home or sell your property? We’re here
-                to help!
+
               </p>
             </div>
             <div className='absolute bottom-6 left-6 lg:bottom-12 lg:left-12 flex flex-col gap-4 text-white'>
@@ -67,14 +65,14 @@ export default function ContactUs() {
                 <div className='flex items-center gap-4 group w-fit'>
                   <Icon icon={'ph:envelope-simple'} width={32} height={32} />
                   <p className='text-sm xs:text-base mobile:text-xm font-normal group-hover:text-primary'>
-                    support@gleamer.com
+                    support@gatherly.com
                   </p>
                 </div>
               </Link>
               <div className='flex items-center gap-4'>
                 <Icon icon={'ph:map-pin'} width={32} height={32} />
                 <p className='text-sm xs:text-base mobile:text-xm font-normal'>
-                  Blane Street, Manchester
+                  Oxford Street, London
                 </p>
               </div>
             </div>
