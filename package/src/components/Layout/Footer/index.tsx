@@ -14,8 +14,8 @@ const Footer = () => {
               <h2 className="text-white leading-[1.2] text-40 font-medium mb-6 lg:max-w-3/4">
                 Creating solutions to foster vibrant communities.
               </h2>
-              <Link href="/contactus" className="bg-primary text-base font-semibold py-4 px-8 rounded-full text-white hover:bg-white hover:text-dark duration-300 hover:cursor-pointer">
-                Get In Touch
+              <Link href="/blogs" className="bg-primary text-base font-semibold py-4 px-8 rounded-full text-white hover:bg-white hover:text-dark duration-300 hover:cursor-pointer">
+                Catch up via Blogs
               </Link>
             </div>
             <div className="md:col-span-3 sm:col-span-6 col-span-12">
@@ -30,21 +30,12 @@ const Footer = () => {
               </div>
             </div>
             <div className="md:col-span-2 sm:col-span-6 col-span-12">
-              <div className="flex flex-col gap-4 w-fit">
-                {FooterLinks.slice(4, 8).map((item, index) => (
-                  <div key={index}>
-                    <Link href={item.href} className="text-white/40 text-xm hover:text-white">
-                      {item.label}
-                    </Link>
-                  </div>
-                ))}
-              </div>
             </div>
           </div>
         </div>
         <div className="flex justify-between md:flex-nowrap flex-wrap items-center py-6 gap-6">
           <p className="text-white/40 text-sm ">
-            ©2025 Gatherly - Design & Developed by Cristina, Arani, Maryam, Janvi <Link href="https://getnextjstemplates.com/" className="hover:text-primary" target="_blanck">GetNextJs Templates</Link>
+            ©2025 Gatherly - Design & Developed by Cristina, Arani, Maryam, Janvi
           </p>
           <div className="flex gap-8 items-center">
             <Link href="https://github.com/crisTINACFG/HuddleHive-Hackathon" className="text-white/40 hover:text-primary text-sm">

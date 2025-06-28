@@ -2,12 +2,31 @@ import { PropertyHomes } from '@/types/properyHomes'
 
 export const propertyHomes: PropertyHomes[] = [
   {
+    name: 'Paddington Works',
+    slug: 'paddington-works',
+    location: '8 Hermitage Street, Paddington, London W2 1BE, UK',
+    price: '2000',
+    capacity: 60,
+    images: [
+      { src: '/images/properties/property4/pad3.jpg' },
+      { src: '/images/properties/property4/pad2.jpg' },
+      { src: '/images/properties/property4/pad1.jpg' },
+      { src: '/images/properties/property4/pad4.jpg' }
+  ],
+    category: 'coorporate'
+  },
+  {
     name: 'Wembley Stadium',
     slug: 'wembley-stadium',
     location: 'Wembley, London HA9 0WS, UK',
     price: '25000',
     capacity: 90000,
-    images: [{ src: '/images/properties/placeholder.jpg' }],
+    images: [
+      { src: '/images/properties/property1/Wembley1.jpg' },
+      { src: '/images/properties/property1/Wembley2.jpg' },
+      { src: '/images/properties/property1/Wembley3.jpg' },
+      { src: '/images/properties/property1/Wembley4.jpg' }
+    ],
     category: 'sports'
   },
   {
@@ -16,7 +35,12 @@ export const propertyHomes: PropertyHomes[] = [
     location: 'Great Russell St, Bloomsbury, London WC1B 3DG, UK',
     price: '4000',
     capacity: 1500,
-    images: [{ src: '/images/properties/placeholder.jpg' }],
+    images: [
+      { src: '/images/properties/property2/BM2.jpg' },
+      { src: '/images/properties/property2/BM3.jpg' },
+      { src: '/images/properties/property2/BM1.jpg' },
+      { src: '/images/properties/property2/BM4.jpg' }
+    ],
     category: 'educational'
   },
   {
@@ -25,18 +49,15 @@ export const propertyHomes: PropertyHomes[] = [
     location: 'Peninsula Square, Greenwich, London SE10 0DX, UK',
     price: '15000',
     capacity: 20000,
-    images: [{ src: '/images/properties/placeholder.jpg' }],
+    images:  [
+      { src: '/images/properties/property3/O2-3.jpg' },
+      { src: '/images/properties/property3/O  2-1.jpg' },
+      { src: '/images/properties/property3/02-2.jpg' },
+      { src: '/images/properties/property3/02-4.jpg' }
+  ],
     category: 'event'
   },
-  {
-    name: 'Royal Albert Hall',
-    slug: 'royal-albert-hall',
-    location: 'Kensington Gore, London SW7 2AP, UK',
-    price: '12000',
-    capacity: 5000,
-    images: [{ src: '/images/properties/placeholder.jpg' }],
-    category: 'entertainment'
-  },
+  
   {
     name: 'Hyde Park',
     slug: 'hyde-park',
