@@ -38,8 +38,7 @@ const Footer = () => {
           <div className="grid grid-cols-12 sm:gap-10 gap-y-6">
             <div className="md:col-span-7 col-span-12">
               <h2 className="text-white leading-[1.2] text-40 font-medium mb-6 lg:max-w-3/4">
-                Begin your path to
-                success contact us today.
+                Creating solutions to foster vibrant communities.
               </h2>
               <Link href="/contactus" className="bg-primary text-base font-semibold py-4 px-8 rounded-full text-white hover:bg-white hover:text-dark duration-300 hover:cursor-pointer">
                 Get In Touch
@@ -71,7 +70,7 @@ const Footer = () => {
         </div>
         <div className="flex justify-between md:flex-nowrap flex-wrap items-center py-6 gap-6">
           <p className="text-white/40 text-sm ">
-            ©2025 gatherly - Design & Developed by <Link href="https://getnextjstemplates.com/" className="hover:text-primary" target="_blanck">GetNextJs Templates</Link>
+            ©2025 Gatherly - Design & Developed by <Link href="https://getnextjstemplates.com/" className="hover:text-primary" target="_blanck">GetNextJs Templates</Link>
           </p>
           <div className="flex gap-8 items-center">
             <Link href="#" className="text-white/40 hover:text-primary text-sm">

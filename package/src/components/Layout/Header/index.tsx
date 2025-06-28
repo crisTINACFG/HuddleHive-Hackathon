@@ -45,7 +45,7 @@ const Header: React.FC = () => {
           <div>
             <Link href='/'>
               <Image
-                src={'/images/header/dark-logo.svg'}
+                src={'/images/header/dark-logo.png'}
                 alt='logo'
                 width={150}
                 height={68}
@@ -53,7 +53,7 @@ const Header: React.FC = () => {
                 className={`${isHomepage ? sticky ? "block dark:hidden" : "hidden" : sticky ? "block dark:hidden" : "block dark:hidden"}`}
               />
               <Image
-                src={'/images/header/logo.svg'}
+                src={'/images/header/logo.png'}
                 alt='logo'
                 width={150}
                 height={68}
@@ -93,8 +93,7 @@ const Header: React.FC = () => {
                 : 'text-dark hover:text-primary'
                 }`}
               >
-                <Icon icon={'ph:phone-bold'} width={24} height={24} />
-                +1-212-456-789
+
               </Link>
             </div>
             <div>
