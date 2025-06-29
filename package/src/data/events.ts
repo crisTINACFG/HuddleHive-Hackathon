@@ -1,4 +1,4 @@
-import { Events } from '@/types/events'
+import { Events } from '@/types/events';
 
 export const events: Events[] = [
   {
@@ -16,7 +16,14 @@ export const events: Events[] = [
       { src: 'https://canarywharf.com/wp-content/uploads/2023/05/canary-wharf-news-offices-l39-2-708x375-1.png' }
     ],
     category: 'tech-leadership',
-    description: 'Empowering women in technology through leadership development, networking, and career advancement opportunities. Free event with mentorship and skill-building workshops.'
+    description: 'Empowering women in technology through leadership development, networking, and career advancement opportunities. Free event with mentorship and skill-building workshops.',
+    amenities: {
+      wheelchairAccessible: true,
+      prayerRooms: true,
+      airConditioning: true,
+      soundSystem: true,
+      wifi: true
+    }
   },
   {
     name: 'HuddleHive Women Hackathon',
@@ -33,7 +40,14 @@ export const events: Events[] = [
       { src: 'https://media.licdn.com/dms/image/v2/D4E22AQEhpZ5y67NVOw/feedshare-shrink_2048_1536/B4EZe1kWK3HYAw-/0/1751097917279?e=1753920000&v=beta&t=zWguUTGWBtVCimX93R43QjB0Jm-tzpYbE-BziijJ1r4' }
     ],
     category: 'hackathon',
-    description: 'A 24-hour hackathon exclusively for women in tech, hosted by Octopus Energy and supported by BCS, The Chartered Institute for IT. Build innovative solutions for clean energy, sustainability, and social impact. Prizes, mentorship, professional development opportunities, and networking included.'
+    description: 'A 24-hour hackathon exclusively for women in tech, hosted by Octopus Energy and supported by BCS, The Chartered Institute for IT. Build innovative solutions for clean energy, sustainability, and social impact. Prizes, mentorship, professional development opportunities, and networking included.',
+    amenities: {
+      wheelchairAccessible: true,
+      prayerRooms: true,
+      airConditioning: true,
+      soundSystem: true,
+      wifi: true
+    }
   },
   {
     name: 'Green Energy Innovation Workshop',
@@ -50,7 +64,14 @@ export const events: Events[] = [
       { src: 'https://www.worldconstructionnetwork.com/wp-content/uploads/sites/26/2017/10/7l-image-4.jpg' }
     ],
     category: 'energy-innovation',
-    description: 'Explore cutting-edge renewable energy solutions, sustainable tech startups, and green innovation. Connect with energy entrepreneurs and environmental tech leaders.'
+    description: 'Explore cutting-edge renewable energy solutions, sustainable tech startups, and green innovation. Connect with energy entrepreneurs and environmental tech leaders.',
+    amenities: {
+      wheelchairAccessible: true,
+      prayerRooms: false,
+      airConditioning: true,
+      soundSystem: true,
+      wifi: true
+    }
   },
   {
     name: 'Tech for Good Community Day',
@@ -67,7 +88,14 @@ export const events: Events[] = [
       { src: 'https://london.impacthub.net/wp-content/uploads/2025/03/chris-king-photography_impact-hub-kx-27-1.jpg' }
     ],
     category: 'tech-community',
-    description: 'A day of tech workshops, coding for beginners, and digital literacy training. Focus on using technology to solve community challenges and create positive social impact.'
+    description: 'A day of tech workshops, coding for beginners, and digital literacy training. Focus on using technology to solve community challenges and create positive social impact.',
+    amenities: {
+      wheelchairAccessible: true,
+      prayerRooms: true,
+      airConditioning: true,
+      soundSystem: true,
+      wifi: true
+    }
   },
   {
     name: 'AI & Machine Learning Bootcamp',
@@ -84,7 +112,14 @@ export const events: Events[] = [
       { src: 'https://londonoffices.com/wp-content/uploads/2015/02/Google-Office-e1423736317828.jpg.webp' }
     ],
     category: 'ai-ml',
-    description: 'Hands-on AI and machine learning workshop for all skill levels. Learn about responsible AI development and how to use AI for social good and energy optimization.'
+    description: 'Hands-on AI and machine learning workshop for all skill levels. Learn about responsible AI development and how to use AI for social good and energy optimization.',
+    amenities: {
+      wheelchairAccessible: true,
+      prayerRooms: true,
+      airConditioning: true,
+      soundSystem: true,
+      wifi: true
+    }
   },
   {
     name: 'Clean Energy Startup Networking',
@@ -101,6 +136,13 @@ export const events: Events[] = [
       { src: 'https://www.freeofficefinder.com/images/uk/london/bishopsgate/building-external-for-st-mary-axe-regus-bishopsgate.qH3fV5oI.72523.15450538701426.jpeg?size=office_detail_large' }
     ],
     category: 'energy-networking',
-    description: 'Connect with clean energy entrepreneurs, investors, and sustainability leaders. Share ideas, find collaborators, and build partnerships for a greener future.'
+    description: 'Connect with clean energy entrepreneurs, investors, and sustainability leaders. Share ideas, find collaborators, and build partnerships for a greener future.',
+    amenities: {
+      wheelchairAccessible: true,
+      prayerRooms: true,
+      airConditioning: true,
+      soundSystem: true,
+      wifi: true
+    }
   }
-]
+]; 

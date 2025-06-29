@@ -6,24 +6,15 @@ export type PropertyHomes = {
   capacity: number
   images: PropertyImage[]
   category: string
-  availability?: VenueAvailability[]
-  description?: string
-  amenities?: string[]
-  bookingNotes?: string
+  amenities?: {
+    wheelchairAccessible: boolean
+    prayerRooms: boolean
+    airConditioning: boolean
+    soundSystem: boolean
+    wifi: boolean
+  }
 }
 
-export interface PropertyImage {
+interface PropertyImage {
   src: string;
-}
-
-export interface VenueAvailability {
-  date: string
-  timeSlots: TimeSlot[]
-}
-
-export interface TimeSlot {
-  startTime: string
-  endTime: string
-  isAvailable: boolean
-  price?: string
 }

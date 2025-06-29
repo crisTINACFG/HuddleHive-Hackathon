@@ -1,47 +1,77 @@
-import BlogCard from "@/components/shared/Blog/blogCard";
-import HeroSub from "@/components/shared/HeroSub";
-import { getAllPosts } from '@/components/utils/markdown';
+"use client"
+import React, { useState, useEffect } from 'react';
+import BlogCard from '@/components/shared/Blog/blogCard';
+import { Icon } from '@iconify/react';
 import Image from 'next/image';
 import Link from 'next/link';
 import { format } from 'date-fns';
-import { Icon } from '@iconify/react';
-import { Metadata } from "next";
-import CreateBlogButton from '@/components/Blog/CreateBlogButton';
 
-export const metadata: Metadata = {
-    title: "Blog | Gatherly",
-};
+interface Blog {
+    title: string;
+    date: string;
+    excerpt: string;
+    coverImage: string;
+    slug: string;
+    detail: string;
+    tag: string;
+}
 
-export default async function Blog() {
-    let posts: any[] = [];
-    
-    try {
-        posts = getAllPosts(["title", "date", "excerpt", "coverImage", "slug", "detail", "tag"])
-            .map(item => ({
-                title: typeof item.title === 'string' ? item.title : String(item.title || ''),
-                date: typeof item.date === 'string' ? item.date : String(item.date || ''),
-                excerpt: typeof item.excerpt === 'string' ? item.excerpt : String(item.excerpt || ''),
-                coverImage: typeof item.coverImage === 'string' ? item.coverImage : String(item.coverImage || ''),
-                slug: typeof item.slug === 'string' ? item.slug : String(item.slug || ''),
-                detail: typeof item.detail === 'string' ? item.detail : String(item.detail || ''),
-                tag: typeof item.tag === 'string' ? item.tag : String(item.tag || ''),
-            }));
-    } catch (error) {
-        console.error("Error loading blog posts:", error);
-        posts = [];
-    }
+const EnhancedBlogList: React.FC = () => {
+    const [searchTerm, setSearchTerm] = useState('');
+    const [selectedCategory, setSelectedCategory] = useState('All');
+    const [posts, setPosts] = useState<Blog[]>([]);
+    const [loading, setLoading] = useState(true);
+    const [error, setError] = useState<string | null>(null);
+
+    useEffect(() => {
+        const fetchPosts = async () => {
+            try {
+                const response = await fetch('/api/blogs');
+                if (!response.ok) {
+                    throw new Error('Failed to fetch blog posts');
+                }
+                const data = await response.json();
+                setPosts(data);
+            } catch (err) {
+                setError(err instanceof Error ? err.message : 'An error occurred');
+            } finally {
+                setLoading(false);
+            }
+        };
+
+        fetchPosts();
+    }, []);
 
     const categories = ['All', ...Array.from(new Set(posts.map(post => post.tag)))];
-    const featuredPost = posts[0];
+    const featuredPost = posts[0]; // First post as featured
+    const filteredPosts = posts.filter(post => {
+        const matchesSearch = post.title.toLowerCase().includes(searchTerm.toLowerCase()) ||
+                            post.excerpt.toLowerCase().includes(searchTerm.toLowerCase());
+        const matchesCategory = selectedCategory === 'All' || post.tag === selectedCategory;
+        return matchesSearch && matchesCategory;
+    });
+
+    if (loading) {
+        return (
+            <div className="py-20 text-center">
+                <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-primary mx-auto mb-4"></div>
+                <p className="text-dark/70 dark:text-white/70">Loading stories...</p>
+            </div>
+        );
+    }
+
+    if (error) {
+        return (
+            <div className="py-20 text-center">
+                <Icon icon="ph:warning" width={64} height={64} className="text-red-500 mx-auto mb-4" />
+                <h3 className="text-xl font-semibold text-dark dark:text-white mb-2">Error loading stories</h3>
+                <p className="text-dark/50 dark:text-white/50">{error}</p>
+            </div>
+        );
+    }
 
     return (
         <>
-            <HeroSub
-                title="Stories that connect communities"
-                description="Discover inspiring stories, insights, and tips from our vibrant community of event organizers and venue hosts."
-                badge="Blog"
-            />
-
             {/* Featured Blog Section */}
             <section className="py-20 bg-gradient-to-br from-blue-50 to-purple-50 dark:from-gray-900 dark:to-gray-800">
                 <div className="container max-w-8xl mx-auto px-5 2xl:px-0">
@@ -53,6 +83,7 @@ export default async function Blog() {
                             Our latest insights and community highlights
                         </p>
                     </div>
+                    
                     {featuredPost && (
                         <div className="bg-white dark:bg-gray-800 rounded-3xl overflow-hidden shadow-2xl hover:shadow-3xl transition-all duration-500">
                             <div className="grid lg:grid-cols-2 gap-0">
@@ -95,9 +126,46 @@ export default async function Blog() {
                 </div>
             </section>
 
-            {/* Blog Statistics */}
+            {/* Search and Filter Section */}
             <section className="py-16 bg-white dark:bg-gray-900">
                 <div className="container max-w-8xl mx-auto px-5 2xl:px-0">
+                    <div className="flex flex-col lg:flex-row gap-6 items-center justify-between mb-12">
+                        <div className="flex-1 max-w-md w-full">
+                            <div className="relative">
+                                <Icon 
+                                    icon="ph:magnifying-glass" 
+                                    className="absolute left-4 top-1/2 transform -translate-y-1/2 text-dark/50 dark:text-white/50" 
+                                    width={20} 
+                                    height={20} 
+                                />
+                                <input
+                                    type="text"
+                                    placeholder="Search stories..."
+                                    value={searchTerm}
+                                    onChange={(e) => setSearchTerm(e.target.value)}
+                                    className="w-full pl-12 pr-4 py-4 border border-gray-200 dark:border-gray-700 rounded-2xl bg-gray-50 dark:bg-gray-800 text-dark dark:text-white focus:ring-2 focus:ring-primary focus:border-transparent"
+                                />
+                            </div>
+                        </div>
+                        
+                        <div className="flex flex-wrap gap-3">
+                            {categories.map((category) => (
+                                <button
+                                    key={category}
+                                    onClick={() => setSelectedCategory(category)}
+                                    className={`px-6 py-3 rounded-full font-semibold transition-all duration-300 ${
+                                        selectedCategory === category
+                                            ? 'bg-primary text-white shadow-lg'
+                                            : 'bg-gray-100 dark:bg-gray-800 text-dark dark:text-white hover:bg-gray-200 dark:hover:bg-gray-700'
+                                    }`}
+                                >
+                                    {category}
+                                </button>
+                            ))}
+                        </div>
+                    </div>
+
+                    {/* Blog Statistics */}
                     <div className="grid grid-cols-1 md:grid-cols-4 gap-6 mb-12">
                         <div className="bg-gradient-to-br from-blue-500 to-blue-600 text-white p-6 rounded-2xl text-center">
                             <div className="text-3xl font-bold mb-2">{posts.length}</div>
@@ -124,22 +192,28 @@ export default async function Blog() {
                 <div className="container max-w-8xl mx-auto px-5 2xl:px-0">
                     <div className="flex items-center justify-between mb-12">
                         <h2 className="text-3xl font-bold text-dark dark:text-white">
-                            All Stories
+                            {selectedCategory === 'All' ? 'All Stories' : `${selectedCategory} Stories`}
                         </h2>
-                        <div className="flex items-center gap-4">
-                            <div className="text-dark/50 dark:text-white/50">
-                                {posts.length} {posts.length === 1 ? 'story' : 'stories'} found
-                            </div>
-                            <CreateBlogButton />
+                        <div className="text-dark/50 dark:text-white/50">
+                            {filteredPosts.length} {filteredPosts.length === 1 ? 'story' : 'stories'} found
                         </div>
                     </div>
-                    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-                        {posts.map((blog, i) => (
-                            <div key={i} className="bg-white dark:bg-gray-900 rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
-                                <BlogCard blog={blog} />
-                            </div>
-                        ))}
-                    </div>
+                    
+                    {filteredPosts.length > 0 ? (
+                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+                            {filteredPosts.map((blog, i) => (
+                                <div key={i} className="bg-white dark:bg-gray-900 rounded-2xl overflow-hidden shadow-lg hover:shadow-xl transition-all duration-300 transform hover:-translate-y-2">
+                                    <BlogCard blog={blog} />
+                                </div>
+                            ))}
+                        </div>
+                    ) : (
+                        <div className="text-center py-16">
+                            <Icon icon="ph:newspaper" width={64} height={64} className="text-dark/30 dark:text-white/30 mx-auto mb-4" />
+                            <h3 className="text-xl font-semibold text-dark dark:text-white mb-2">No stories found</h3>
+                            <p className="text-dark/50 dark:text-white/50">Try adjusting your search or filter criteria</p>
+                        </div>
+                    )}
                 </div>
             </section>
 
@@ -170,4 +244,6 @@ export default async function Blog() {
             </section>
         </>
     );
-}
+};
+
+export default EnhancedBlogList; 

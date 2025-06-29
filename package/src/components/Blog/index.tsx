@@ -1,6 +1,6 @@
-import React from 'react';
+"use client"
+import React, { useState, useEffect } from 'react';
 import BlogCard from '@/components/shared/Blog/blogCard';
-import { getAllPosts } from '@/components/utils/markdown';
 
 interface Blog {
     title: string;
@@ -13,17 +13,36 @@ interface Blog {
 }
 
 const BlogList: React.FC = () => {
-    // Get all posts and map over them to ensure each field is a string
-    const posts: Blog[] = getAllPosts(["title", "date", "excerpt", "coverImage", "slug", "detail", "tag"])
-        .map(item => ({
-            title: typeof item.title === 'string' ? item.title : String(item.title),
-            date: typeof item.date === 'string' ? item.date : String(item.date),
-            excerpt: typeof item.excerpt === 'string' ? item.excerpt : String(item.excerpt),
-            coverImage: typeof item.coverImage === 'string' ? item.coverImage : String(item.coverImage),
-            slug: typeof item.slug === 'string' ? item.slug : String(item.slug),
-            detail: typeof item.detail === 'string' ? item.detail : String(item.detail),
-            tag: typeof item.tag === 'string' ? item.tag : String(item.tag),
-        }))
+    const [posts, setPosts] = useState<Blog[]>([]);
+    const [loading, setLoading] = useState(true);
+
+    useEffect(() => {
+        const fetchPosts = async () => {
+            try {
+                const response = await fetch('/api/blogs');
+                if (!response.ok) {
+                    throw new Error('Failed to fetch blog posts');
+                }
+                const data = await response.json();
+                setPosts(data);
+            } catch (err) {
+                console.error('Error fetching blog posts:', err);
+            } finally {
+                setLoading(false);
+            }
+        };
+
+        fetchPosts();
+    }, []);
+
+    if (loading) {
+        return (
+            <div className="py-20 text-center">
+                <div className="animate-spin rounded-full h-12 w-12 border-b-2 border-primary mx-auto mb-4"></div>
+                <p className="text-dark/70 dark:text-white/70">Loading stories...</p>
+            </div>
+        );
+    }
 
     return (
         <section className='pt-0!'>

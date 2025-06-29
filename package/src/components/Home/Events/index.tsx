@@ -1,6 +1,6 @@
 import { Icon } from '@iconify/react'
 import EventCard from '@/components/Events/EventCard/EventCard'
-import { events } from '@/app/api/events'
+import { events } from '@/data/events'
 import Link from 'next/link'
 
 const HomeEvents: React.FC = () => {
@@ -30,7 +30,7 @@ const HomeEvents: React.FC = () => {
           </p>
         </div>
         <div className='grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-10'>
-          {events.map((item, index) => (
+          {events.slice(0, 3).map((item, index) => (
             <div key={index} className=''>
               <EventCard item={item} />
             </div>

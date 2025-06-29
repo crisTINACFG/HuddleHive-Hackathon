@@ -9,6 +9,13 @@ export type Events = {
   images: PropertyImage[]
   category: string
   description?: string
+  amenities?: {
+    wheelchairAccessible: boolean
+    prayerRooms: boolean
+    airConditioning: boolean
+    soundSystem: boolean
+    wifi: boolean
+  }
 }
 
 export interface PropertyImage {

@@ -1,5 +1,5 @@
 import PropertyCard from '@/components/Home/Properties/Card/Card'
-import { propertyHomes } from '@/app/api/propertyhomes'
+import { propertyHomes } from '@/data/propertyHomes'
 
 const Appartment: React.FC = () => {
     return (

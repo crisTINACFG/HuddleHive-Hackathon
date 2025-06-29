@@ -1,16 +1,28 @@
 "use client"
-import React from 'react';
-import { propertyHomes } from '@/app/api/propertyhomes';
+import React, { useState } from 'react';
+import { propertyHomes } from '@/data/propertyHomes';
 import { useParams } from "next/navigation";
 import { Icon } from '@iconify/react';
 import { testimonials } from '@/app/api/testimonial';
 import Link from 'next/link';
 import Image from 'next/image';
+import VenueBookingModal from '@/components/Properties/VenueBookingModal';
+import AmenitiesDisplay from '@/components/shared/AmenitiesDisplay';
 
 export default function Details() {
     const { slug } = useParams();
+    const [isBookingModalOpen, setIsBookingModalOpen] = useState(false);
 
     const item = propertyHomes.find((item) => item.slug === slug);
+
+    const handleBookVenue = () => {
+        setIsBookingModalOpen(true);
+    };
+
+    const handleCloseModal = () => {
+        setIsBookingModalOpen(false);
+    };
+
     return (
         <section className="!pt-44 pb-20 relative" >
             <div className="container mx-auto max-w-8xl px-5 2xl:px-0">
@@ -109,9 +121,9 @@ export default function Details() {
                                             <Icon icon="ph:map-pin" width={32} height={32} className="text-primary" />
                                         </div>
                                         <div>
-                                            <h3 className='text-dark dark:text-white text-xm'>Central Location</h3>
+                                            <h3 className='text-dark dark:text-white text-xm'>Venue Location</h3>
                                             <p className='text-base text-dark/50 dark:text-white/50'>
-                                                Located in Paddington with excellent transport links and access to business amenities.
+                                                {item?.location}
                                             </p>
                                         </div>
                                     </div>
@@ -146,9 +158,9 @@ export default function Details() {
                                             <Icon icon="ph:map-pin" width={32} height={32} className="text-primary" />
                                         </div>
                                         <div>
-                                            <h3 className='text-dark dark:text-white text-xm'>Prime Location</h3>
+                                            <h3 className='text-dark dark:text-white text-xm'>Venue Location</h3>
                                             <p className='text-base text-dark/50 dark:text-white/50'>
-                                                Located in the heart of Covent Garden, surrounded by shops, restaurants, and cultural attractions.
+                                                {item?.location}
                                             </p>
                                         </div>
                                     </div>
@@ -183,9 +195,9 @@ export default function Details() {
                                             <Icon icon="ph:map-pin" width={32} height={32} className="text-primary" />
                                         </div>
                                         <div>
-                                            <h3 className='text-dark dark:text-white text-xm'>Bloomsbury Location</h3>
+                                            <h3 className='text-dark dark:text-white text-xm'>Venue Location</h3>
                                             <p className='text-base text-dark/50 dark:text-white/50'>
-                                                Located in the heart of Bloomsbury, easily accessible and surrounded by academic institutions.
+                                                {item?.location}
                                             </p>
                                         </div>
                                     </div>
@@ -220,9 +232,9 @@ export default function Details() {
                                             <Icon icon="ph:map-pin" width={32} height={32} className="text-primary" />
                                         </div>
                                         <div>
-                                            <h3 className='text-dark dark:text-white text-xm'>Guildford Campus</h3>
+                                            <h3 className='text-dark dark:text-white text-xm'>Venue Location</h3>
                                             <p className='text-base text-dark/50 dark:text-white/50'>
-                                                Located in Guildford with excellent transport links and modern campus facilities.
+                                                {item?.location}
                                             </p>
                                         </div>
                                     </div>
@@ -257,9 +269,9 @@ export default function Details() {
                                             <Icon icon="ph:map-pin" width={32} height={32} className="text-primary" />
                                         </div>
                                         <div>
-                                            <h3 className='text-dark dark:text-white text-xm'>Central London Location</h3>
+                                            <h3 className='text-dark dark:text-white text-xm'>Venue Location</h3>
                                             <p className='text-base text-dark/50 dark:text-white/50'>
-                                                Located in the heart of London with excellent transport links and iconic landmarks nearby.
+                                                {item?.location}
                                             </p>
                                         </div>
                                     </div>
@@ -294,9 +306,9 @@ export default function Details() {
                                             <Icon icon="ph:map-pin" width={32} height={32} className="text-primary" />
                                         </div>
                                         <div>
-                                            <h3 className='text-dark dark:text-white text-xm'>Shoreditch Location</h3>
+                                            <h3 className='text-dark dark:text-white text-xm'>Venue Location</h3>
                                             <p className='text-base text-dark/50 dark:text-white/50'>
-                                                Located in the heart of London's tech scene with excellent transport and startup ecosystem.
+                                                {item?.location}
                                             </p>
                                         </div>
                                     </div>
@@ -482,105 +494,7 @@ export default function Details() {
                             )}
                         </div>
                         <div className="py-8 mt-8 border-t border-dark/5 dark:border-white/15">
-                            <h3 className='text-xl font-medium'>What this property offers</h3>
-                            <div className="grid grid-cols-3 mt-5 gap-6">
-                                {slug === 'paddington-works' && (
-                                    <>
-                                        <div className="flex items-center gap-2.5">
-                                            <Icon icon="ph:wifi" width={24} height={24} className="text-dark dark:text-white" />
-                                            <p className='text-base dark:text-white text-dark'>Free WiFi</p>
-                                        </div>
-                                        <div className="flex items-center gap-2.5">
-                                            <Icon icon="ph:snowflake" width={24} height={24} className="text-dark dark:text-white" />
-                                            <p className='text-base dark:text-white text-dark'>Air Conditioning</p>
-                                        </div>
-                                        <div className="flex items-center gap-2.5">
-                                            <Icon icon="ph:speaker-high" width={24} height={24} className="text-dark dark:text-white" />
-                                            <p className='text-base dark:text-white text-dark'>Sound System</p>
-                                        </div>
-                                    </>
-                                )}
-                                {slug === 'monmouth-coffee' && (
-                                    <>
-                                        <div className="flex items-center gap-2.5">
-                                            <Icon icon="ph:coffee" width={24} height={24} className="text-dark dark:text-white" />
-                                            <p className='text-base dark:text-white text-dark'>Coffee Service</p>
-                                        </div>
-                                        <div className="flex items-center gap-2.5">
-                                            <Icon icon="ph:wifi" width={24} height={24} className="text-dark dark:text-white" />
-                                            <p className='text-base dark:text-white text-dark'>Free WiFi</p>
-                                        </div>
-                                        <div className="flex items-center gap-2.5">
-                                            <Icon icon="ph:users" width={24} height={24} className="text-dark dark:text-white" />
-                                            <p className='text-base dark:text-white text-dark'>Intimate Setting</p>
-                                        </div>
-                                    </>
-                                )}
-                                {slug === 'the-british-museum' && (
-                                    <>
-                                        <div className="flex items-center gap-2.5">
-                                            <Icon icon="ph:buildings" width={24} height={24} className="text-dark dark:text-white" />
-                                            <p className='text-base dark:text-white text-dark'>Historic Venue</p>
-                                        </div>
-                                        <div className="flex items-center gap-2.5">
-                                            <Icon icon="ph:users-three" width={24} height={24} className="text-dark dark:text-white" />
-                                            <p className='text-base dark:text-white text-dark'>Large Capacity</p>
-                                        </div>
-                                        <div className="flex items-center gap-2.5">
-                                            <Icon icon="ph:fork-knife" width={24} height={24} className="text-dark dark:text-white" />
-                                            <p className='text-base dark:text-white text-dark'>Catering Services</p>
-                                        </div>
-                                    </>
-                                )}
-                                {slug === 'university-of-surrey' && (
-                                    <>
-                                        <div className="flex items-center gap-2.5">
-                                            <Icon icon="ph:graduation-cap" width={24} height={24} className="text-dark dark:text-white" />
-                                            <p className='text-base dark:text-white text-dark'>Academic Facilities</p>
-                                        </div>
-                                        <div className="flex items-center gap-2.5">
-                                            <Icon icon="ph:users-three" width={24} height={24} className="text-dark dark:text-white" />
-                                            <p className='text-base dark:text-white text-dark'>Large Capacity</p>
-                                        </div>
-                                        <div className="flex items-center gap-2.5">
-                                            <Icon icon="ph:house" width={24} height={24} className="text-dark dark:text-white" />
-                                            <p className='text-base dark:text-white text-dark'>Accommodation</p>
-                                        </div>
-                                    </>
-                                )}
-                                {slug === 'hyde-park' && (
-                                    <>
-                                        <div className="flex items-center gap-2.5">
-                                            <Icon icon="ph:tree" width={24} height={24} className="text-dark dark:text-white" />
-                                            <p className='text-base dark:text-white text-dark'>Natural Setting</p>
-                                        </div>
-                                        <div className="flex items-center gap-2.5">
-                                            <Icon icon="ph:users-three" width={24} height={24} className="text-dark dark:text-white" />
-                                            <p className='text-base dark:text-white text-dark'>Massive Capacity</p>
-                                        </div>
-                                        <div className="flex items-center gap-2.5">
-                                            <Icon icon="ph:park" width={24} height={24} className="text-dark dark:text-white" />
-                                            <p className='text-base dark:text-white text-dark'>Free Access</p>
-                                        </div>
-                                    </>
-                                )}
-                                {slug === 'google-campus-london' && (
-                                    <>
-                                        <div className="flex items-center gap-2.5">
-                                            <Icon icon="ph:laptop" width={24} height={24} className="text-dark dark:text-white" />
-                                            <p className='text-base dark:text-white text-dark'>Tech Innovation</p>
-                                        </div>
-                                        <div className="flex items-center gap-2.5">
-                                            <Icon icon="ph:users-three" width={24} height={24} className="text-dark dark:text-white" />
-                                            <p className='text-base dark:text-white text-dark'>Modern Event Space</p>
-                                        </div>
-                                        <div className="flex items-center gap-2.5">
-                                            <Icon icon="ph:map-pin" width={24} height={24} className="text-dark dark:text-white" />
-                                            <p className='text-base dark:text-white text-dark'>Shoreditch Location</p>
-                                        </div>
-                                    </>
-                                )}
-                            </div>
+                            {item?.amenities && <AmenitiesDisplay amenities={item.amenities} />}
                         </div>
                         <iframe
                             src={`https://www.google.com/maps?q=${encodeURIComponent(item?.location ?? '')}&output=embed`}
@@ -598,9 +512,11 @@ export default function Details() {
                                 £{item?.price}
                             </h4>
                             <p className='text-sm text-dark/50 dark:text-white'>Discounted Price</p>
-                            <Link href="#" className='py-4 px-8 bg-primary text-white rounded-full w-full block text-center hover:bg-dark duration-300 text-base mt-8 hover:cursor-pointer'>
-                                Get in touch
-                            </Link>
+                            <button 
+                                onClick={handleBookVenue}
+                                className='py-4 px-8 bg-primary text-white rounded-full w-full block text-center hover:bg-dark duration-300 text-base mt-8 hover:cursor-pointer'>
+                                Book Venue
+                            </button>
                             <div className="absolute right-0 top-4 -z-[1]">
                                 <Image src="/images/properties/vector.svg" width={400} height={500} alt="vector" unoptimized={true} />
                             </div>
@@ -621,6 +537,13 @@ export default function Details() {
                     </div>
                 </div>
             </div>
+            {isBookingModalOpen && item && (
+                <VenueBookingModal
+                    isOpen={isBookingModalOpen}
+                    onClose={handleCloseModal}
+                    venue={item}
+                />
+            )}
         </section>
     );
 }

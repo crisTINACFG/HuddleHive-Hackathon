@@ -1,10 +1,10 @@
-import { PropertyHomes } from '@/types/properyHomes'
+import { PropertyHomes } from '@/types/properyHomes';
 
 export const propertyHomes: PropertyHomes[] = [
   {
     name: 'Paddington Works',
     slug: 'paddington-works',
-    location: '8 Hermitage Street, Paddington, London W2 1BE, UK',
+    location: '8	Hermitage Street, Paddington, London W2	1BE, UK',
     price: '2000',
     capacity: 60,
     images: [
@@ -13,7 +13,14 @@ export const propertyHomes: PropertyHomes[] = [
       { src: '/images/properties/property4/pad1.jpg' },
       { src: '/images/properties/property4/pad4.jpg' }
   ],
-    category: 'office'
+    category: 'office',
+    amenities: {
+      wheelchairAccessible: true,
+      prayerRooms: false,
+      airConditioning: true,
+      soundSystem: true,
+      wifi: true
+    }
   },
   {
     name: 'Monmouth Coffee',
@@ -27,7 +34,14 @@ export const propertyHomes: PropertyHomes[] = [
       { src: '/images/properties/property1/mon3.jpg' },
       { src: '/images/properties/property1/mon4.jpg' }
     ],
-    category: 'Cafe'
+    category: 'Cafe',
+    amenities: {
+      wheelchairAccessible: true,
+      prayerRooms: false,
+      airConditioning: true,
+      soundSystem: false,
+      wifi: true
+    }
   },
   {
     name: 'The British Museum',
@@ -41,12 +55,19 @@ export const propertyHomes: PropertyHomes[] = [
       { src: '/images/properties/property2/BM1.jpg' },
       { src: '/images/properties/property2/BM4.jpg' }
     ],
-    category: 'community hall'
+    category: 'community hall',
+    amenities: {
+      wheelchairAccessible: true,
+      prayerRooms: true,
+      airConditioning: true,
+      soundSystem: true,
+      wifi: true
+    }
   },
   {
     name: 'University of Surrey',
     slug: 'university-of-surrey',
-    location: 'Guildford, Surrey GU2 7XH, UK',
+    location: 'University of Surrey, Stag Hill, Guildford, Surrey GU2 7XH, UK',
     price: '15000',
     capacity: 3000,
     images:  [
@@ -55,13 +76,20 @@ export const propertyHomes: PropertyHomes[] = [
       { src: '/images/properties/property3/sur3.jpg' },
       { src: '/images/properties/property3/sur4.jpg' }
   ],
-    category: 'univeristy'
+    category: 'university',
+    amenities: {
+      wheelchairAccessible: true,
+      prayerRooms: true,
+      airConditioning: true,
+      soundSystem: true,
+      wifi: true
+    }
   },
   
   {
     name: 'Hyde Park',
     slug: 'hyde-park',
-    location: 'London W2 2UH, UK',
+    location: 'Hyde Park, London W2 2UH, UK',
     price: '0',
     capacity: 35000,
     images: [
@@ -70,7 +98,14 @@ export const propertyHomes: PropertyHomes[] = [
       { src: '/images/properties/property5/hyde3.jpg' },
       { src: '/images/properties/property5/hyde4.jpg' }  
     ],
-    category: 'community hall'
+    category: 'community hall',
+    amenities: {
+      wheelchairAccessible: true,
+      prayerRooms: false,
+      airConditioning: false,
+      soundSystem: true,
+      wifi: false
+    }
   },
   {
     name: 'Google Campus London',
@@ -84,6 +119,13 @@ export const propertyHomes: PropertyHomes[] = [
       { src: '/images/properties/property6/gog3.jpg' },
       { src: '/images/properties/property6/gog4.jpg' }
     ],
-    category: 'office '
+    category: 'office',
+    amenities: {
+      wheelchairAccessible: true,
+      prayerRooms: true,
+      airConditioning: true,
+      soundSystem: true,
+      wifi: true
+    }
   },
-]
+]; 

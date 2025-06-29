@@ -95,6 +95,24 @@ const EventCard: React.FC<{ item: Events }> = ({ item }) => {
             </p>
           </div>
         </div>
+        {item.amenities && (
+          <div className='px-6 pb-4'>
+            <div className='flex items-center gap-4 text-xs text-black/60 dark:text-white/60'>
+              {item.amenities.wheelchairAccessible && (
+                <div className='flex items-center gap-1'>
+                  <Icon icon="ph:wheelchair" width={14} height={14} />
+                  <span>Wheelchair Accessible</span>
+                </div>
+              )}
+              {item.amenities.wifi && (
+                <div className='flex items-center gap-1'>
+                  <Icon icon="ph:wifi" width={14} height={14} />
+                  <span>WiFi</span>
+                </div>
+              )}
+            </div>
+          </div>
+        )}
       </div>
       {isBookingModalOpen && (
         <BookingModal

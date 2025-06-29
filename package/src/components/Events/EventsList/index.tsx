@@ -1,5 +1,5 @@
 import EventCard from '@/components/Events/EventCard/EventCard'
-import { events } from '@/app/api/events'
+import { events } from '@/data/events'
 
 const EventsListing: React.FC = () => {
   return (

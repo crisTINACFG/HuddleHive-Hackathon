@@ -1,10 +1,11 @@
 "use client"
 import React, { useState } from 'react';
-import { events } from '@/app/api/events';
+import { events } from '@/data/events';
 import { useParams } from "next/navigation";
 import { Icon } from '@iconify/react';
 import Image from 'next/image';
 import BookingModal from '@/components/Events/BookingModal';
+import AmenitiesDisplay from '@/components/shared/AmenitiesDisplay';
 
 export default function EventDetails() {
     const { slug } = useParams();
@@ -167,21 +168,7 @@ export default function EventDetails() {
                             </p>
                         </div>
                         <div className="py-8 mt-8 border-t border-dark/5 dark:border-white/15">
-                            <h3 className='text-xl font-medium'>What this event offers</h3>
-                            <div className="grid grid-cols-3 mt-5 gap-6">
-                                <div className="flex items-center gap-2.5">
-                                    <Icon icon="ph:users" width={24} height={24} className="text-dark dark:text-white" />
-                                    <p className='text-base dark:text-white text-dark'>Networking</p>
-                                </div>
-                                <div className="flex items-center gap-2.5">
-                                    <Icon icon="ph:lightbulb" width={24} height={24} className="text-dark dark:text-white" />
-                                    <p className='text-base dark:text-white text-dark'>Learning</p>
-                                </div>
-                                <div className="flex items-center gap-2.5">
-                                    <Icon icon="ph:heart" width={24} height={24} className="text-dark dark:text-white" />
-                                    <p className='text-base dark:text-white text-dark'>Experience</p>
-                                </div>
-                            </div>
+                            {item?.amenities && <AmenitiesDisplay amenities={item.amenities} />}
                         </div>
                         <div className="py-8 mt-8 border-t border-dark/5 dark:border-white/15">
                             <h3 className='text-xl font-medium mb-6'>Featured Speakers</h3>

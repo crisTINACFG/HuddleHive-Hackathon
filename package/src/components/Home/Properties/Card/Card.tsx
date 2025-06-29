@@ -1,12 +1,24 @@
+"use client"
 import { PropertyHomes } from '@/types/properyHomes'
 import { Icon } from '@iconify/react'
 import Image from 'next/image'
 import Link from 'next/link'
+import { useState } from 'react'
+import VenueBookingModal from '@/components/Properties/VenueBookingModal'
 
 const PropertyCard: React.FC<{ item: PropertyHomes }> = ({ item }) => {
   const { name, location, price, capacity, slug, images, category } = item
+  const [isBookingModalOpen, setIsBookingModalOpen] = useState(false)
 
   const mainImage = images[0]?.src;
+
+  const handleBookVenue = () => {
+    setIsBookingModalOpen(true);
+  };
+
+  const handleCloseModal = () => {
+    setIsBookingModalOpen(false);
+  };
 
   return (
     <div>
@@ -44,9 +56,14 @@ const PropertyCard: React.FC<{ item: PropertyHomes }> = ({ item }) => {
               {location}
             </p>
           </div>
-          <div>
+          <div className='flex flex-col gap-2'>
             <button className='text-base font-normal text-primary px-5 py-2 rounded-full bg-primary/10'>
               £{price}
+            </button>
+            <button 
+              onClick={handleBookVenue}
+              className='text-base font-normal text-white px-5 py-2 rounded-full bg-primary hover:bg-dark duration-300'>
+              Book
             </button>
           </div>
         </div>
@@ -70,7 +87,32 @@ const PropertyCard: React.FC<{ item: PropertyHomes }> = ({ item }) => {
             </p>
           </div>
         </div>
+        {item.amenities && (
+          <div className='px-6 pb-4'>
+            <div className='flex items-center gap-4 text-xs text-black/60 dark:text-white/60'>
+              {item.amenities.wheelchairAccessible && (
+                <div className='flex items-center gap-1'>
+                  <Icon icon="ph:wheelchair" width={14} height={14} />
+                  <span>Wheelchair Accessible</span>
+                </div>
+              )}
+              {item.amenities.wifi && (
+                <div className='flex items-center gap-1'>
+                  <Icon icon="ph:wifi" width={14} height={14} />
+                  <span>WiFi</span>
+                </div>
+              )}
+            </div>
+          </div>
+        )}
       </div>
+      {isBookingModalOpen && (
+        <VenueBookingModal
+          isOpen={isBookingModalOpen}
+          onClose={handleCloseModal}
+          venue={item}
+        />
+      )}
     </div>
   )
 }
