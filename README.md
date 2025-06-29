@@ -173,10 +173,10 @@ Supabase is configured for data storage. Update connection in:
 
 ## The Team 
 
-Maryam Karous www.linkedin.com/in/maryam-karous-78b674280
-Cristina Gheorghe https://www.linkedin.com/in/cristina-gheorghe-0a6053285/
-Janvi Goricha
-Arani Gnanavalagan
+- [Maryam Karous](https://www.linkedin.com/in/maryam-karous-78b674280)
+- [Cristina Gheorghe](https://www.linkedin.com/in/cristina-gheorghe-0a6053285/)
+- [Janvi Goricha](https://www.linkedin.com/in/janvi-goricha/)
+- [Arani Gnanavalagan](https://www.linkedin.com/in/arani-gnanavalagan/)
 
 ---
 
