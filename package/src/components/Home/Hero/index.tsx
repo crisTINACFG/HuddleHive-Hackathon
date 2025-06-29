@@ -50,7 +50,7 @@ const Hero: React.FC = () => {
           </div>
           <div className='hidden md:block absolute -top-2 -right-68'>
             <Image
-              src={'/images/hero/heroBanner.png'}
+              src={'/images/hero/image.jpeg'}
               alt='heroImg'
               width={1082}
               height={1016}
