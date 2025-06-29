@@ -3,7 +3,7 @@ import OfficeSpace from "@/components/Properties/OfficeSpaces";
 import React from "react";
 import { Metadata } from "next";
 export const metadata: Metadata = {
-    title: "Office Spaces | Gatherly",
+    title: "Property List | Homely",
 };
 
 const page = () => {

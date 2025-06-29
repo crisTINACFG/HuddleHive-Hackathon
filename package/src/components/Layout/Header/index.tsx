@@ -170,11 +170,11 @@ const Header: React.FC = () => {
             <p className='text-base sm:text-xm font-normal text-white/40'>
               Contact
             </p>
-            <p className='text-base sm:text-xm font-medium text-inherit'>
+            <Link href="#" className='text-base sm:text-xm font-medium text-inherit hover:text-primary'>
               hello@gatherly.com
-            </p>
-            <Link href="https://github.com/crisTINACFG/HuddleHive-Hackathon" className='text-base sm:text-xm font-medium text-inherit hover:text-primary'>
-              Github
+            </Link>
+            <Link href="#" className='text-base sm:text-xm font-medium text-inherit hover:text-primary'>
+              +1-212-456-7890{' '}
             </Link>
           </div>
         </div>

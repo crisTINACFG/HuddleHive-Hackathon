@@ -25,21 +25,25 @@ export default function Details() {
                     <div className="lg:col-span-4 col-span-12">
                         <div className='flex'>
                             <div className='flex flex-col gap-2 border-e border-black/10 dark:border-white/20 pr-2 xs:pr-4 mobile:pr-8'>
-                                <Icon icon={'solar:tag-price-bold'} width={20} height={20} />
+                                <Icon icon={'solar:bed-linear'} width={20} height={20} />
                                 <p className='text-sm mobile:text-base font-normal text-black dark:text-white'>
-                                    Price<br />£{item?.price}
+                                    {item?.beds} Bedrooms
                                 </p>
                             </div>
                             <div className='flex flex-col gap-2 border-e border-black/10 dark:border-white/20 px-2 xs:px-4 mobile:px-8'>
-                                <Icon icon={'solar:users-group-rounded-bold'} width={20} height={20} />
+                                <Icon icon={'solar:bath-linear'} width={20} height={20} />
                                 <p className='text-sm mobile:text-base font-normal text-black dark:text-white'>
-                                    Capacity<br />{item?.capacity}
+                                    {item?.baths} Bathrooms
                                 </p>
                             </div>
                             <div className='flex flex-col gap-2 pl-2 xs:pl-4 mobile:pl-8'>
-                                <span style={{fontSize: '20px'}}>✔</span>
+                                <Icon
+                                    icon={'lineicons:arrow-all-direction'}
+                                    width={20}
+                                    height={20}
+                                />
                                 <p className='text-sm mobile:text-base font-normal text-black dark:text-white'>
-                                    Category<br />{item?.category}
+                                    {item?.area}m<sup>2</sup>
                                 </p>
                             </div>
                         </div>
@@ -80,522 +84,106 @@ export default function Details() {
                     <div className="lg:col-span-8 col-span-12">
                         <h3 className='text-xl font-medium'>Property details</h3>
                         <div className="py-8 my-8 border-y border-dark/10 dark:border-white/20 flex flex-col gap-8">
-                            {slug === 'paddington-works' && (
-                                <>
-                                    <div className="flex items-center gap-6">
-                                        <div>
-                                            <Icon icon="ph:buildings" width={32} height={32} className="text-primary" />
-                                        </div>
-                                        <div>
-                                            <h3 className='text-dark dark:text-white text-xm'>Modern Co-working Space</h3>
-                                            <p className='text-base text-dark/50 dark:text-white/50'>
-                                                Paddington Works is a state-of-the-art co-working space designed for startups and creative businesses.    
-                                            </p>
-                                        </div>
-                                    </div>
-                                    <div className="flex items-center gap-6">
-                                        <div>
-                                            <Icon icon="ph:users-three" width={32} height={32} className="text-primary" />
-                                        </div>
-                                        <div>
-                                            <h3 className='text-dark dark:text-white text-xm'>Collaborative Environment</h3>
-                                            <p className='text-base text-dark/50 dark:text-white/50'>
-                                                Flexible workspace with dedicated meeting rooms and event areas for professional gatherings.
-                                            </p>
-                                        </div>
-                                    </div>
-                                    <div className="flex items-center gap-6">
-                                        <div>
-                                            <Icon icon="ph:map-pin" width={32} height={32} className="text-primary" />
-                                        </div>
-                                        <div>
-                                            <h3 className='text-dark dark:text-white text-xm'>Central Location</h3>
-                                            <p className='text-base text-dark/50 dark:text-white/50'>
-                                                Located in Paddington with excellent transport links and access to business amenities.
-                                            </p>
-                                        </div>
-                                    </div>
-                                </>
-                            )}
-                            {slug === 'monmouth-coffee' && (
-                                <>
-                                    <div className="flex items-center gap-6">
-                                        <div>
-                                            <Icon icon="ph:coffee" width={32} height={32} className="text-primary" />
-                                        </div>
-                                        <div>
-                                            <h3 className='text-dark dark:text-white text-xm'>Premium Coffee Service</h3>
-                                            <p className='text-base text-dark/50 dark:text-white/50'>
-                                                Monmouth Coffee is renowned for its exceptional coffee quality and artisanal brewing methods.    
-                                            </p>
-                                        </div>
-                                    </div>
-                                    <div className="flex items-center gap-6">
-                                        <div>
-                                            <Icon icon="ph:users" width={32} height={32} className="text-primary" />
-                                        </div>
-                                        <div>
-                                            <h3 className='text-dark dark:text-white text-xm'>Intimate Atmosphere</h3>
-                                            <p className='text-base text-dark/50 dark:text-white/50'>
-                                                Perfect for small gatherings with a warm, welcoming environment that encourages conversation.
-                                            </p>
-                                        </div>
-                                    </div>
-                                    <div className="flex items-center gap-6">
-                                        <div>
-                                            <Icon icon="ph:map-pin" width={32} height={32} className="text-primary" />
-                                        </div>
-                                        <div>
-                                            <h3 className='text-dark dark:text-white text-xm'>Prime Location</h3>
-                                            <p className='text-base text-dark/50 dark:text-white/50'>
-                                                Located in the heart of Covent Garden, surrounded by shops, restaurants, and cultural attractions.
-                                            </p>
-                                        </div>
-                                    </div>
-                                </>
-                            )}
-                            {slug === 'the-british-museum' && (
-                                <>
-                                    <div className="flex items-center gap-6">
-                                        <div>
-                                            <Icon icon="ph:buildings" width={32} height={32} className="text-primary" />
-                                        </div>
-                                        <div>
-                                            <h3 className='text-dark dark:text-white text-xm'>Historic Museum Venue</h3>
-                                            <p className='text-base text-dark/50 dark:text-white/50'>
-                                                The British Museum is one of the world's most prestigious cultural institutions and event venues.    
-                                            </p>
-                                        </div>
-                                    </div>
-                                    <div className="flex items-center gap-6">
-                                        <div>
-                                            <Icon icon="ph:users-three" width={32} height={32} className="text-primary" />
-                                        </div>
-                                        <div>
-                                            <h3 className='text-dark dark:text-white text-xm'>Large Capacity Events</h3>
-                                            <p className='text-base text-dark/50 dark:text-white/50'>
-                                                Accommodates up to 1500 guests in magnificent halls surrounded by world-class exhibits.
-                                            </p>
-                                        </div>
-                                    </div>
-                                    <div className="flex items-center gap-6">
-                                        <div>
-                                            <Icon icon="ph:map-pin" width={32} height={32} className="text-primary" />
-                                        </div>
-                                        <div>
-                                            <h3 className='text-dark dark:text-white text-xm'>Bloomsbury Location</h3>
-                                            <p className='text-base text-dark/50 dark:text-white/50'>
-                                                Located in the heart of Bloomsbury, easily accessible and surrounded by academic institutions.
-                                            </p>
-                                        </div>
-                                    </div>
-                                </>
-                            )}
-                            {slug === 'university-of-surrey' && (
-                                <>
-                                    <div className="flex items-center gap-6">
-                                        <div>
-                                            <Icon icon="ph:graduation-cap" width={32} height={32} className="text-primary" />
-                                        </div>
-                                        <div>
-                                            <h3 className='text-dark dark:text-white text-xm'>Academic Excellence</h3>
-                                            <p className='text-base text-dark/50 dark:text-white/50'>
-                                                University of Surrey is a leading research university with world-class facilities and expertise.    
-                                            </p>
-                                        </div>
-                                    </div>
-                                    <div className="flex items-center gap-6">
-                                        <div>
-                                            <Icon icon="ph:users-three" width={32} height={32} className="text-primary" />
-                                        </div>
-                                        <div>
-                                            <h3 className='text-dark dark:text-white text-xm'>Large Conference Venue</h3>
-                                            <p className='text-base text-dark/50 dark:text-white/50'>
-                                                Accommodates up to 3000 delegates in state-of-the-art conference facilities and lecture theatres.
-                                            </p>
-                                        </div>
-                                    </div>
-                                    <div className="flex items-center gap-6">
-                                        <div>
-                                            <Icon icon="ph:map-pin" width={32} height={32} className="text-primary" />
-                                        </div>
-                                        <div>
-                                            <h3 className='text-dark dark:text-white text-xm'>Guildford Campus</h3>
-                                            <p className='text-base text-dark/50 dark:text-white/50'>
-                                                Located in Guildford with excellent transport links and modern campus facilities.
-                                            </p>
-                                        </div>
-                                    </div>
-                                </>
-                            )}
-                            {slug === 'hyde-park' && (
-                                <>
-                                    <div className="flex items-center gap-6">
-                                        <div>
-                                            <Icon icon="ph:tree" width={32} height={32} className="text-primary" />
-                                        </div>
-                                        <div>
-                                            <h3 className='text-dark dark:text-white text-xm'>Historic Royal Park</h3>
-                                            <p className='text-base text-dark/50 dark:text-white/50'>
-                                                Hyde Park is one of London's most iconic and historic royal parks, spanning 350 acres.    
-                                            </p>
-                                        </div>
-                                    </div>
-                                    <div className="flex items-center gap-6">
-                                        <div>
-                                            <Icon icon="ph:users-three" width={32} height={32} className="text-primary" />
-                                        </div>
-                                        <div>
-                                            <h3 className='text-dark dark:text-white text-xm'>Massive Outdoor Venue</h3>
-                                            <p className='text-base text-dark/50 dark:text-white/50'>
-                                                Accommodates up to 35,000 people in various outdoor spaces and event areas.
-                                            </p>
-                                        </div>
-                                    </div>
-                                    <div className="flex items-center gap-6">
-                                        <div>
-                                            <Icon icon="ph:map-pin" width={32} height={32} className="text-primary" />
-                                        </div>
-                                        <div>
-                                            <h3 className='text-dark dark:text-white text-xm'>Central London Location</h3>
-                                            <p className='text-base text-dark/50 dark:text-white/50'>
-                                                Located in the heart of London with excellent transport links and iconic landmarks nearby.
-                                            </p>
-                                        </div>
-                                    </div>
-                                </>
-                            )}
-                            {slug === 'google-campus-london' && (
-                                <>
-                                    <div className="flex items-center gap-6">
-                                        <div>
-                                            <Icon icon="ph:laptop" width={32} height={32} className="text-primary" />
-                                        </div>
-                                        <div>
-                                            <h3 className='text-dark dark:text-white text-xm'>Tech Innovation Hub</h3>
-                                            <p className='text-base text-dark/50 dark:text-white/50'>
-                                                Google Campus London is a cutting-edge tech hub designed for startups and innovation.    
-                                            </p>
-                                        </div>
-                                    </div>
-                                    <div className="flex items-center gap-6">
-                                        <div>
-                                            <Icon icon="ph:users-three" width={32} height={32} className="text-primary" />
-                                        </div>
-                                        <div>
-                                            <h3 className='text-dark dark:text-white text-xm'>Modern Event Space</h3>
-                                            <p className='text-base text-dark/50 dark:text-white/50'>
-                                                Accommodates up to 500 attendees in state-of-the-art conference and event facilities.
-                                            </p>
-                                        </div>
-                                    </div>
-                                    <div className="flex items-center gap-6">
-                                        <div>
-                                            <Icon icon="ph:map-pin" width={32} height={32} className="text-primary" />
-                                        </div>
-                                        <div>
-                                            <h3 className='text-dark dark:text-white text-xm'>Shoreditch Location</h3>
-                                            <p className='text-base text-dark/50 dark:text-white/50'>
-                                                Located in the heart of London's tech scene with excellent transport and startup ecosystem.
-                                            </p>
-                                        </div>
-                                    </div>
-                                </>
-                            )}
+                            <div className="flex items-center gap-6">
+                                <div>
+                                    <Image src="/images/SVGs/property-details.svg" width={400} height={500} alt="" className='w-8 h-8 dark:hidden' unoptimized={true} />
+                                    <Image src="/images/SVGs/property-details-white.svg" width={400} height={500} alt="" className='w-8 h-8 dark:block hidden' unoptimized={true} />
+                                </div>
+                                <div>
+                                    <h3 className='text-dark dark:text-white text-xm'>Property details</h3>
+                                    <p className='text-base text-dark/50 dark:text-white/50'>
+                                        One of the few homes in the area with a private pool.
+                                    </p>
+                                </div>
+                            </div>
+                            <div className="flex items-center gap-6">
+                                <div>
+                                    <Image src="/images/SVGs/smart-home-access.svg" width={400} height={500} alt="" className='w-8 h-8 dark:hidden' unoptimized={true} />
+                                    <Image src="/images/SVGs/smart-home-access-white.svg" width={400} height={500} alt="" className='w-8 h-8 dark:block hidden' unoptimized={true} />
+                                </div>
+                                <div>
+                                    <h3 className='text-dark dark:text-white text-xm'>Smart home access</h3>
+                                    <p className='text-base text-dark/50 dark:text-white/50'>
+                                        Easily check yourself in with a modern keypad system.
+                                    </p>
+                                </div>
+                            </div>
+                            <div className="flex items-center gap-6">
+                                <div>
+                                    <Image src="/images/SVGs/energyefficient.svg" width={400} height={500} alt="" className='w-8 h-8 dark:hidden' unoptimized={true} />
+                                    <Image src="/images/SVGs/energyefficient-white.svg" width={400} height={500} alt="" className='w-8 h-8 dark:block hidden' unoptimized={true} />
+                                </div>
+                                <div>
+                                    <h3 className='text-dark dark:text-white text-xm'>Energy efficient</h3>
+                                    <p className='text-base text-dark/50 dark:text-white/50'>
+                                        Built in 2025 with sustainable and smart-home features.
+                                    </p>
+                                </div>
+                            </div>
                         </div>
                         <div className="flex flex-col gap-5">
-                            {slug === 'paddington-works' && (
-                                <>
-                                    <p className='text-dark dark:text-white text-xm '>
-                                        Paddington Works is a vibrant modern co-working space located in the heart of London's Paddington district. 
-                                        This innovative workspace supports startups and creative businesses with flexible office solutions and a 
-                                        collaborative environment. The venue offers 60-person capacity with modern amenities, high-speed internet, 
-                                        and flexible booking options perfect for events, meetings, and collaborative sessions.
-                                    </p>
-                                    <p className='text-dark dark:text-white text-xm '>
-                                        The space features an open-plan design with natural light streaming through large windows, creating an 
-                                        inspiring atmosphere for productivity and creativity. The modern interior includes comfortable seating areas, 
-                                        dedicated meeting rooms, and flexible event spaces that can be configured to suit various needs. Whether 
-                                        you're hosting a workshop, networking event, or team meeting, Paddington Works provides the perfect setting.
-                                    </p>
-                                    <p className='text-dark dark:text-white text-xm '>
-                                        Located at 8 Hermitage Street, the venue is easily accessible via Paddington Station and offers excellent 
-                                        transport links. The surrounding area is home to numerous cafes, restaurants, and amenities, making it 
-                                        convenient for attendees. The space is equipped with state-of-the-art presentation equipment, audio-visual 
-                                        systems, and reliable Wi-Fi to ensure your events run smoothly.
-                                    </p>
-                                    <p className='text-dark dark:text-white text-xm '>
-                                        With its prime location, modern facilities, and flexible pricing starting at £2000, Paddington Works 
-                                        represents excellent value for businesses looking to host professional events in central London. The venue 
-                                        is perfect for tech meetups, startup events, creative workshops, and corporate functions.
-                                    </p>
-                                </>
-                            )}
-                            {slug === 'monmouth-coffee' && (
-                                <>
-                                    <p className='text-dark dark:text-white text-xm '>
-                                        Monmouth Coffee is a charming and intimate cafe venue located in the heart of Covent Garden, London. 
-                                        This beloved coffee shop offers a warm, welcoming atmosphere perfect for small gatherings, coffee meetups, 
-                                        and casual networking events. The venue accommodates up to 60 guests with a cozy, rustic interior that 
-                                        creates the perfect backdrop for relaxed and productive meetings.
-                                    </p>
-                                    <p className='text-dark dark:text-white text-xm '>
-                                        The space features exposed brick walls, wooden tables, and comfortable seating arrangements that encourage 
-                                        conversation and collaboration. The cafe's intimate setting makes it ideal for small workshops, coffee 
-                                        tastings, informal business meetings, and creative brainstorming sessions. The natural lighting and 
-                                        aromatic coffee atmosphere create an inspiring environment for productivity and connection.
-                                    </p>
-                                    <p className='text-dark dark:text-white text-xm '>
-                                        Situated at 27 Monmouth Street in Covent Garden, the venue is perfectly located in one of London's most 
-                                        vibrant cultural districts. The area is easily accessible via multiple transport links and surrounded by 
-                                        shops, restaurants, and entertainment venues. The cafe offers excellent coffee and light refreshments, 
-                                        making it convenient for attendees to enjoy quality beverages during their events.
-                                    </p>
-                                    <p className='text-dark dark:text-white text-xm '>
-                                        With its affordable pricing of £400, Monmouth Coffee provides excellent value for small-scale events 
-                                        and meetings. The venue is perfect for coffee meetups, small networking events, informal workshops, 
-                                        and intimate gatherings where a relaxed, cafe atmosphere is desired.
-                                    </p>
-                                </>
-                            )}
-                            {slug === 'the-british-museum' && (
-                                <>
-                                    <p className='text-dark dark:text-white text-xm '>
-                                        The British Museum is one of the world's most prestigious cultural institutions and event venues, located 
-                                        in the heart of Bloomsbury, London. This magnificent venue offers an unparalleled setting for large-scale 
-                                        events, conferences, and cultural gatherings with a capacity of up to 1500 guests. The museum's historic 
-                                        halls and galleries provide a truly unique backdrop for memorable events.
-                                    </p>
-                                    <p className='text-dark dark:text-white text-xm '>
-                                        The venue features stunning architectural spaces including the iconic Great Court, with its spectacular 
-                                        glass roof designed by Norman Foster, and various historic galleries that can be adapted for different 
-                                        event formats. The museum's world-class exhibits and artifacts create an inspiring atmosphere that adds 
-                                        cultural significance to any event. Whether hosting a corporate conference, academic symposium, or cultural 
-                                        celebration, The British Museum offers an extraordinary setting.
-                                    </p>
-                                    <p className='text-dark dark:text-white text-xm '>
-                                        Located at Great Russell Street in Bloomsbury, the venue is easily accessible via multiple transport links 
-                                        including Russell Square, Holborn, and Tottenham Court Road stations. The surrounding area is home to 
-                                        numerous academic institutions, hotels, and cultural venues, making it convenient for international 
-                                        attendees. The museum provides comprehensive event services including catering, technical support, and 
-                                        professional event coordination.
-                                    </p>
-                                    <p className='text-dark dark:text-white text-xm '>
-                                        With its prestigious reputation, historic significance, and flexible pricing starting at £4000, The British 
-                                        Museum represents the ultimate venue for high-profile events, international conferences, and cultural 
-                                        gatherings. The venue is perfect for academic conferences, corporate events, cultural celebrations, and 
-                                        large-scale exhibitions where a world-class setting is required.
-                                    </p>
-                                </>
-                            )}
-                            {slug === 'university-of-surrey' && (
-                                <>
-                                    <p className='text-dark dark:text-white text-xm '>
-                                        The University of Surrey is a leading research university located in Guildford, offering world-class 
-                                        conference facilities and academic expertise for large-scale events. This prestigious institution provides 
-                                        an ideal setting for academic conferences, research symposiums, and educational events with a capacity 
-                                        of up to 3000 delegates. The university's modern campus and state-of-the-art facilities create the perfect 
-                                        environment for knowledge sharing and collaboration.
-                                    </p>
-                                    <p className='text-dark dark:text-white text-xm '>
-                                        The venue features multiple lecture theatres, conference halls, and seminar rooms equipped with the latest 
-                                        audio-visual technology and presentation equipment. The university's research facilities and academic 
-                                        expertise across various disciplines make it an ideal location for subject-specific conferences and 
-                                        interdisciplinary events. Whether hosting an international academic conference, research symposium, or 
-                                        educational workshop, the University of Surrey provides a professional and inspiring setting.
-                                    </p>
-                                    <p className='text-dark dark:text-white text-xm '>
-                                        Located in Guildford, the venue is easily accessible via Guildford Station with excellent rail connections 
-                                        to London and the South East. The campus offers comprehensive facilities including accommodation, dining 
-                                        options, and recreational spaces, making it convenient for multi-day events and international attendees. 
-                                        The university provides professional event management services, technical support, and catering options 
-                                        to ensure successful event delivery.
-                                    </p>
-                                    <p className='text-dark dark:text-white text-xm '>
-                                        With its academic excellence, modern facilities, and competitive pricing starting at £15000, the University 
-                                        of Surrey represents exceptional value for large-scale academic and educational events. The venue is 
-                                        perfect for international conferences, research symposiums, educational workshops, and academic gatherings 
-                                        where expertise and professional facilities are paramount.
-                                    </p>
-                                </>
-                            )}
-                            {slug === 'hyde-park' && (
-                                <>
-                                    <p className='text-dark dark:text-white text-xm '>
-                                        Hyde Park is one of London's most iconic and historic royal parks, spanning 350 acres in the heart of 
-                                        the capital. This magnificent outdoor venue offers an unparalleled setting for large-scale events, 
-                                        festivals, and outdoor gatherings with a capacity of up to 35,000 people. The park's natural beauty, 
-                                        historic landmarks, and vast open spaces create the perfect backdrop for memorable outdoor events.
-                                    </p>
-                                    <p className='text-dark dark:text-white text-xm '>
-                                        The venue features multiple event areas including the famous Speaker's Corner, the Serpentine Lake, 
-                                        and various open lawns that can accommodate different event formats and sizes. The park's natural 
-                                        landscape with mature trees, gardens, and water features provides a stunning setting for outdoor 
-                                        concerts, festivals, sporting events, and cultural celebrations. Whether hosting a music festival, 
-                                        outdoor conference, or community gathering, Hyde Park offers a truly unique outdoor experience.
-                                    </p>
-                                    <p className='text-dark dark:text-white text-xm '>
-                                        Located in central London, the venue is easily accessible via multiple transport links including Hyde 
-                                        Park Corner, Marble Arch, and Knightsbridge stations. The surrounding area is home to numerous hotels, 
-                                        restaurants, and cultural attractions, making it convenient for attendees. The park provides essential 
-                                        facilities including toilets, food concessions, and emergency services to support large-scale events.
-                                    </p>
-                                    <p className='text-dark dark:text-white text-xm '>
-                                        With its historic significance, natural beauty, and free access, Hyde Park represents exceptional value 
-                                        for large-scale outdoor events and community gatherings. The venue is perfect for music festivals, 
-                                        outdoor concerts, sporting events, cultural celebrations, and community gatherings where a natural, 
-                                        outdoor setting is desired.
-                                    </p>
-                                </>
-                            )}
-                            {slug === 'google-campus-london' && (
-                                <>
-                                    <p className='text-dark dark:text-white text-xm '>
-                                        Google Campus London is a cutting-edge tech hub and innovation center located in the heart of London's 
-                                        vibrant Shoreditch district. This state-of-the-art venue offers an ideal setting for tech events, 
-                                        startup gatherings, and innovation conferences with a capacity of up to 500 attendees. The campus's 
-                                        modern design and tech-focused environment create the perfect backdrop for digital innovation and 
-                                        entrepreneurial collaboration.
-                                    </p>
-                                    <p className='text-dark dark:text-white text-xm '>
-                                        The venue features multiple event spaces including conference rooms, presentation areas, and collaborative 
-                                        workspaces equipped with the latest technology and presentation equipment. The campus's innovative 
-                                        atmosphere, with its modern design and tech-inspired interiors, provides an inspiring environment for 
-                                        hackathons, tech meetups, startup pitch events, and innovation workshops. Whether hosting a coding 
-                                        bootcamp, tech conference, or startup networking event, Google Campus London offers a truly immersive 
-                                        tech experience.
-                                    </p>
-                                    <p className='text-dark dark:text-white text-xm '>
-                                        Located at 4-5 Bonhill Street in Shoreditch, the venue is easily accessible via multiple transport links 
-                                        including Old Street, Liverpool Street, and Shoreditch High Street stations. The surrounding area is 
-                                        home to numerous tech startups, creative agencies, and innovative businesses, making it the perfect 
-                                        location for tech-focused events. The campus provides comprehensive tech facilities including high-speed 
-                                        internet, presentation equipment, and collaborative spaces to support innovative events.
-                                    </p>
-                                    <p className='text-dark dark:text-white text-xm '>
-                                        With its tech innovation focus, modern facilities, and competitive pricing starting at £1500, Google 
-                                        Campus London represents exceptional value for tech events and startup gatherings. The venue is perfect 
-                                        for hackathons, tech conferences, startup pitch events, coding workshops, and innovation meetups where 
-                                        cutting-edge technology and entrepreneurial spirit are paramount.
-                                    </p>
-                                </>
-                            )}
+                            <p className='text-dark dark:text-white text-xm '>
+                                Nestled in the heart of miami, the modern luxe villa at 20 s aurora ave offers a perfect blend of contemporary
+                                elegance and smart-home innovation. priced at $570000, this 560 ft² residence features 4 spacious bedrooms,
+                                3 luxurious bathrooms, and expansive living areas designed for comfort and style. built in 2025, the home
+                                boasts energy-efficient systems, abundant natural light, and state-of-the-art security features. outdoor
+                                spaces include two stylish bar areas, perfect for entertaining 8+ guests. enjoy the ultimate in modern living
+                                with premium amenities and a prime location.
+                            </p>
+                            <p className='text-dark dark:text-white text-xm '>
+                                Step inside to discover an open-concept layout that seamlessly connects the kitchen, dining, and living spaces.
+                                the gourmet kitchen is equipped with top-of-the-line appliances, sleek cabinetry, and a large island perfect
+                                for casual dining or meal prep. the sunlit living room offers floor-to-ceiling windows, creating a bright and
+                                airy atmosphere while providing stunning views of the outdoor space.
+                            </p>
+                            <p className='text-dark dark:text-white text-xm '>
+                                The primary suite serves as a private retreat with a spa-like ensuite bathroom and a spacious walk-in closet.
+                                each additional bedroom is thoughtfully designed with comfort and style in mind, offering ample space and modern
+                                finishes. the home’s three bathrooms feature high-end fixtures, custom vanities, and elegant tiling.
+                            </p>
+                            <p className='text-dark dark:text-white text-xm '>
+                                Outdoor living is equally impressive, with a beautifully landscaped backyard, multiple lounge areas,
+                                and two fully equipped bar spaces.
+                            </p>
                         </div>
                         <div className="py-8 mt-8 border-t border-dark/5 dark:border-white/15">
                             <h3 className='text-xl font-medium'>What this property offers</h3>
                             <div className="grid grid-cols-3 mt-5 gap-6">
-                                {slug === 'paddington-works' && (
-                                    <>
-                                        <div className="flex items-center gap-2.5">
-                                            <Icon icon="ph:wifi" width={24} height={24} className="text-dark dark:text-white" />
-                                            <p className='text-base dark:text-white text-dark'>Free WiFi</p>
-                                        </div>
-                                        <div className="flex items-center gap-2.5">
-                                            <Icon icon="ph:snowflake" width={24} height={24} className="text-dark dark:text-white" />
-                                            <p className='text-base dark:text-white text-dark'>Air Conditioning</p>
-                                        </div>
-                                        <div className="flex items-center gap-2.5">
-                                            <Icon icon="ph:speaker-high" width={24} height={24} className="text-dark dark:text-white" />
-                                            <p className='text-base dark:text-white text-dark'>Sound System</p>
-                                        </div>
-                                    </>
-                                )}
-                                {slug === 'monmouth-coffee' && (
-                                    <>
-                                        <div className="flex items-center gap-2.5">
-                                            <Icon icon="ph:coffee" width={24} height={24} className="text-dark dark:text-white" />
-                                            <p className='text-base dark:text-white text-dark'>Coffee Service</p>
-                                        </div>
-                                        <div className="flex items-center gap-2.5">
-                                            <Icon icon="ph:wifi" width={24} height={24} className="text-dark dark:text-white" />
-                                            <p className='text-base dark:text-white text-dark'>Free WiFi</p>
-                                        </div>
-                                        <div className="flex items-center gap-2.5">
-                                            <Icon icon="ph:users" width={24} height={24} className="text-dark dark:text-white" />
-                                            <p className='text-base dark:text-white text-dark'>Intimate Setting</p>
-                                        </div>
-                                    </>
-                                )}
-                                {slug === 'the-british-museum' && (
-                                    <>
-                                        <div className="flex items-center gap-2.5">
-                                            <Icon icon="ph:buildings" width={24} height={24} className="text-dark dark:text-white" />
-                                            <p className='text-base dark:text-white text-dark'>Historic Venue</p>
-                                        </div>
-                                        <div className="flex items-center gap-2.5">
-                                            <Icon icon="ph:users-three" width={24} height={24} className="text-dark dark:text-white" />
-                                            <p className='text-base dark:text-white text-dark'>Large Capacity</p>
-                                        </div>
-                                        <div className="flex items-center gap-2.5">
-                                            <Icon icon="ph:fork-knife" width={24} height={24} className="text-dark dark:text-white" />
-                                            <p className='text-base dark:text-white text-dark'>Catering Services</p>
-                                        </div>
-                                    </>
-                                )}
-                                {slug === 'university-of-surrey' && (
-                                    <>
-                                        <div className="flex items-center gap-2.5">
-                                            <Icon icon="ph:graduation-cap" width={24} height={24} className="text-dark dark:text-white" />
-                                            <p className='text-base dark:text-white text-dark'>Academic Facilities</p>
-                                        </div>
-                                        <div className="flex items-center gap-2.5">
-                                            <Icon icon="ph:users-three" width={24} height={24} className="text-dark dark:text-white" />
-                                            <p className='text-base dark:text-white text-dark'>Large Capacity</p>
-                                        </div>
-                                        <div className="flex items-center gap-2.5">
-                                            <Icon icon="ph:house" width={24} height={24} className="text-dark dark:text-white" />
-                                            <p className='text-base dark:text-white text-dark'>Accommodation</p>
-                                        </div>
-                                    </>
-                                )}
-                                {slug === 'hyde-park' && (
-                                    <>
-                                        <div className="flex items-center gap-2.5">
-                                            <Icon icon="ph:tree" width={24} height={24} className="text-dark dark:text-white" />
-                                            <p className='text-base dark:text-white text-dark'>Natural Setting</p>
-                                        </div>
-                                        <div className="flex items-center gap-2.5">
-                                            <Icon icon="ph:users-three" width={24} height={24} className="text-dark dark:text-white" />
-                                            <p className='text-base dark:text-white text-dark'>Massive Capacity</p>
-                                        </div>
-                                        <div className="flex items-center gap-2.5">
-                                            <Icon icon="ph:park" width={24} height={24} className="text-dark dark:text-white" />
-                                            <p className='text-base dark:text-white text-dark'>Free Access</p>
-                                        </div>
-                                    </>
-                                )}
-                                {slug === 'google-campus-london' && (
-                                    <>
-                                        <div className="flex items-center gap-2.5">
-                                            <Icon icon="ph:laptop" width={24} height={24} className="text-dark dark:text-white" />
-                                            <p className='text-base dark:text-white text-dark'>Tech Innovation</p>
-                                        </div>
-                                        <div className="flex items-center gap-2.5">
-                                            <Icon icon="ph:users-three" width={24} height={24} className="text-dark dark:text-white" />
-                                            <p className='text-base dark:text-white text-dark'>Modern Event Space</p>
-                                        </div>
-                                        <div className="flex items-center gap-2.5">
-                                            <Icon icon="ph:map-pin" width={24} height={24} className="text-dark dark:text-white" />
-                                            <p className='text-base dark:text-white text-dark'>Shoreditch Location</p>
-                                        </div>
-                                    </>
-                                )}
+                                <div className="flex items-center gap-2.5">
+                                    <Icon icon="ph:aperture" width={24} height={24} className="text-dark dark:text-white" />
+                                    <p className='text-base dark:text-white text-dark'>Smart Home Integration</p>
+                                </div>
+                                <div className="flex items-center gap-2.5">
+                                    <Icon icon="ph:chart-pie-slice" width={24} height={24} className="text-dark dark:text-white" />
+                                    <p className='text-base dark:text-white text-dark'>Spacious Living Areas</p>
+                                </div>
+                                <div className="flex items-center gap-2.5">
+                                    <Icon icon="ph:television-simple" width={24} height={24} className="text-dark dark:text-white" />
+                                    <p className='text-base dark:text-white text-dark'>Energy Efficiency</p>
+                                </div>
+                                <div className="flex items-center gap-2.5">
+                                    <Icon icon="ph:sun" width={24} height={24} className="text-dark dark:text-white" />
+                                    <p className='text-base dark:text-white text-dark'>Natural Light</p>
+                                </div>
+                                <div className="flex items-center gap-2.5">
+                                    <Icon icon="ph:video-camera" width={24} height={24} className="text-dark dark:text-white" />
+                                    <p className='text-base dark:text-white text-dark'>Security Systems</p>
+                                </div>
+                                <div className="flex items-center gap-2.5">
+                                    <Icon icon="ph:cloud" width={24} height={24} className="text-dark dark:text-white" />
+                                    <p className='text-base dark:text-white text-dark'>Outdoor Spaces</p>
+                                </div>
                             </div>
                         </div>
                         <iframe
-                            src={`https://www.google.com/maps?q=${encodeURIComponent(item?.location ?? '')}&output=embed`}
-                            width="1114"
-                            height="400"
-                            loading="lazy"
-                            referrerPolicy="no-referrer-when-downgrade"
-                            className="rounded-2xl w-full"
-                            title="Venue Location"
-                        ></iframe>
+                            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d938779.7831767448!2d71.05098621661072!3d23.20271516446136!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x395e82dd003ff749%3A0x359e803f537cea25!2sGANESH%20GLORY%2C%20Gota%2C%20Ahmedabad%2C%20Gujarat%20382481!5e0!3m2!1sen!2sin!4v1715676641521!5m2!1sen!2sin"
+                            width="1114" height="400" loading="lazy" referrerPolicy="no-referrer-when-downgrade" className="rounded-2xl w-full">
+                        </iframe>
                     </div>
                     <div className="lg:col-span-4 col-span-12">
                         <div className="bg-primary/10 p-8 rounded-2xl relative z-10 overflow-hidden">
                             <h4 className='text-dark text-3xl font-medium dark:text-white'>
-                                £{item?.price}
+                                {item?.rate}
                             </h4>
                             <p className='text-sm text-dark/50 dark:text-white'>Discounted Price</p>
                             <Link href="#" className='py-4 px-8 bg-primary text-white rounded-full w-full block text-center hover:bg-dark duration-300 text-base mt-8 hover:cursor-pointer'>
@@ -605,15 +193,15 @@ export default function Details() {
                                 <Image src="/images/properties/vector.svg" width={400} height={500} alt="vector" unoptimized={true} />
                             </div>
                         </div>
-                        {testimonials.filter(t => t.slug === item?.slug).map((review, index) => (
+                        {testimonials.slice(0, 1).map((item, index) => (
                             <div key={index} className="border p-10 rounded-2xl border-dark/10 dark:border-white/20 mt-10 flex flex-col gap-6">
                                 <Icon icon="ph:house-simple" width={44} height={44} className="text-primary" />
-                                <p className='text-xm text-dark dark:text-white'>{review.review}</p>
-                                <div className="flex items-center gap-4 mt-4">
-                                    <img src={review.image} alt={review.name} className="w-10 h-10 rounded-full object-cover" />
-                                    <div>
-                                        <span className="block font-semibold text-dark dark:text-white">{review.name}</span>
-                                        <span className="block text-xs text-dark/50 dark:text-white/50">{review.position}</span>
+                                <p className='text-xm text-dark dark:text-white'>{item.review}</p>
+                                <div className="flex items-center gap-6">
+                                    <Image src={item.image} alt={item.name} width={400} height={500} className='w-20 h-20 rounded-2xl' unoptimized={true} />
+                                    <div className="">
+                                        <h3 className='text-xm text-dark dark:text-white'>{item.name}</h3>
+                                        <h4 className='text-base text-dark/50 dark:text-white/50'>{item.position}</h4>
                                     </div>
                                 </div>
                             </div>
