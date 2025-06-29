@@ -10,7 +10,7 @@ export const PackageStructure = () => {
   return (
     <div id="structure" className="md:scroll-m-[130px] scroll-m-28">
       <h3 className=" text-black text-2xl font-semibold mt-8 dark:text-white">
-        Pacakge Structure
+        Project Structure
       </h3>
       <div className="rounded-2xl p-6 pt-3 border border-black/10 dark:border-white/20 mt-6">
         <div className="flex items-center gap-4">
@@ -27,7 +27,7 @@ export const PackageStructure = () => {
                   icon="tabler:folder"
                   className="text-primary text-base inline-block me-2"
                 />
-                packages
+                src
               </span>
             </div>
             <ul className="ps-5 md:ps-5 list-unstyled">

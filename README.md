@@ -50,21 +50,20 @@ Gatherly is a comprehensive platform that brings together people in tech through
 
 ```
 HuddleHive-Hackathon/
-├── package/                    # Main application
-│   ├── src/
-│   │   ├── app/               # Next.js app router
-│   │   │   ├── (site)/        # Public pages
-│   │   │   │   ├── events/    # Event pages
-│   │   │   │   ├── properties/ # Venue pages
-│   │   │   │   └── ...        # Other pages
-│   │   │   ├── api/           # API routes
-│   │   │   └── context/       # React contexts
-│   │   ├── components/        # Reusable components
-│   │   ├── lib/              # Utilities and configs
-│   │   └── types/            # TypeScript definitions
-│   ├── public/               # Static assets
-│   └── package.json          # Dependencies
-└── README.md                 # This file
+├── src/
+│   ├── app/               # Next.js app router
+│   │   ├── (site)/        # Public pages
+│   │   │   ├── events/    # Event pages
+│   │   │   ├── properties/ # Venue pages
+│   │   │   └── ...        # Other pages
+│   │   ├── api/           # API routes
+│   │   └── context/       # React contexts
+│   ├── components/        # Reusable components
+│   ├── lib/              # Utilities and configs
+│   └── types/            # TypeScript definitions
+├── public/               # Static assets
+├── package.json          # Dependencies
+└── README.md             # This file
 ```
 
 ## 🚀 Getting Started
@@ -77,12 +76,7 @@ HuddleHive-Hackathon/
 
 1. **Clone the repository**
 
-2. **Navigate to the package directory**
-   ```bash
-   cd package
-   ```
-
-3. **Install dependencies**
+2. **Install dependencies**
    ```bash
    npm install
    # or
@@ -91,8 +85,8 @@ HuddleHive-Hackathon/
    pnpm install
    ```
 
-4. **Set up environment variables**
-   Create a `.env.local` file in the `package` directory:
+3. **Set up environment variables**
+   Create a `.env.local` file in the root directory:
    ```env
    NEXTAUTH_SECRET=your-secret-key
    NEXTAUTH_URL=http://localhost:3000
@@ -100,7 +94,7 @@ HuddleHive-Hackathon/
    SUPABASE_ANON_KEY=your-supabase-anon-key
    ```
 
-5. **Run the development server**
+4. **Run the development server**
    ```bash
    npm run dev
    # or
@@ -109,7 +103,7 @@ HuddleHive-Hackathon/
    pnpm dev
    ```
 
-6. **Open your browser**
+5. **Open your browser**
    Navigate to [http://localhost:3000](http://localhost:3000)
 
 ## 📖 Available Scripts
