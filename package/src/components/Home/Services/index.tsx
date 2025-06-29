@@ -4,7 +4,7 @@ import Link from "next/link";
 
 const Categories = () => {
   return (
-    <section className="relative overflow-hidden">
+    <section className="relative overflow-hidden py-20">
       <div className="absolute left-0 top-0">
         <Image
           src="/images/categories/Vector.svg"
@@ -26,20 +26,25 @@ const Categories = () => {
       <div className="container max-w-8xl mx-auto px-5 2xl:px-0 relative z-10">
         <div className="grid grid-cols-12 items-center gap-10">
           <div className="lg:col-span-6 col-span-12">
-            <p className="text-2xl text-dark/75 dark:text-white/75 font-semibold flex gap-2.5">
-              <Icon icon="ph:buildings" className="text-2xl text-primary " />
-              Venue Categories
+            <p className="text-2xl text-dark/75 dark:text-white/75 font-semibold flex gap-2.5 mb-4">
+              <Icon icon="ph:laptop" className="text-2xl text-blue-500 " />
+              Our Innovation Spaces
             </p>
             <h2 className="lg:text-52 text-40 mt-4 mb-2 lg:max-w-full font-medium leading-[1.2] text-dark dark:text-white">
-              Explore best venues
-              with the best services.
+              Spaces That <span className="text-blue-600 dark:text-blue-400">Innovate</span> and <span className="text-green-600 dark:text-green-400">Accelerate</span>
             </h2>
-            <p className="text-dark/50 dark:text-white/50 text-lg lg:max-w-full leading-[1.3] md:max-w-3/4">
-              Discover a diverse range of spaces tailored to your needs, whether you need a sports or educational centre. We have made it easy to find the perfect location, ensuring a comfortable and enjoyable experience for everyone.
+            <p className="text-dark/50 dark:text-white/50 text-lg lg:max-w-full leading-[1.3] md:max-w-3/4 mb-6">
+              Every venue in our network is designed to foster innovation, support tech startups, and accelerate clean energy solutions. 
+              From AI labs to green tech hubs, we provide the spaces where the future is built.
             </p>
-            <Link href="/properties" className="py-4 px-8 bg-primary text-base leading-4 block w-fit text-white rounded-full font-semibold mt-8 hover:bg-dark duration-300">
-              View all venues
-            </Link>
+            <div className="flex flex-col sm:flex-row gap-4">
+              <Link href="/properties" className="py-4 px-8 bg-blue-600 hover:bg-blue-700 text-base leading-4 block w-fit text-white rounded-full font-semibold transition-all duration-300">
+                Explore Our Spaces
+              </Link>
+              <Link href="/events" className="py-4 px-8 bg-green-600 hover:bg-green-700 text-base leading-4 block w-fit text-white rounded-full font-semibold transition-all duration-300">
+                Join Tech Events
+              </Link>
+            </div>
           </div>
           <div className="lg:col-span-6 col-span-12">
             <div className="relative rounded-2xl overflow-hidden group">
@@ -61,10 +66,10 @@ const Categories = () => {
                 </div>
                 <div className="flex flex-col gap-2.5">
                   <h3 className="text-white text-2xl">
-                    Coworking & Office Spaces
+                    Tech Innovation Hubs
                   </h3>
                   <p className="text-white/80 text-base leading-6">
-                   Professional environments for meetings, workshops, and collaborative events. Includes private offices, boardrooms, shared workspaces, and business hubs.
+                   State-of-the-art workspaces for tech startups, AI companies, and clean energy innovators. Includes AI labs, green tech incubators, and collaborative innovation spaces.
                   </p>
                 </div>
               </Link>
@@ -90,10 +95,10 @@ const Categories = () => {
                 </div>
                 <div className="flex flex-col gap-2.5">
                   <h3 className="text-white text-2xl">
-                    Schools & Universities
+                    Research & Development Centers
                   </h3>
                   <p className="text-white/80 text-base leading-6">
-                    Classrooms, auditoriums, computer rooms and lecture halls perfect for educational or youth-centered events.
+                    Advanced research facilities for AI development, renewable energy research, and sustainable technology innovation. Supporting academic and industry collaboration.
                   </p>
                 </div>
               </Link>
@@ -119,10 +124,10 @@ const Categories = () => {
                 </div>
                 <div className="flex flex-col gap-2.5">
                   <h3 className="text-white text-2xl">
-                     Cafés & Restaurants
+                     Tech Meetup Spaces
                   </h3>
                   <p className="text-white/80 text-base leading-6">
-                    Cozy and informal settings for social events, networking, or pop-up experiences.
+                    Casual, welcoming spaces for tech meetups, coding sessions, and informal networking. Where tech communities gather and ideas spark.
                   </p>
                 </div>
               </Link>
@@ -148,10 +153,10 @@ const Categories = () => {
                 </div>
                 <div className="flex flex-col gap-2.5">
                   <h3 className="text-white text-2xl">
-                    Community Halls
+                    Green Tech Centers
                   </h3>
                   <p className="text-white/80 text-base leading-6">
-                     Affordable, flexible spaces often used for events, meetings, and local gatherings.
+                     Sustainable spaces for clean energy events, environmental tech workshops, and climate innovation gatherings. The heart of green technology advancement.
                   </p>
                 </div>
               </Link>

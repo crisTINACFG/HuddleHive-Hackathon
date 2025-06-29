@@ -7,9 +7,46 @@ const Hero: React.FC = () => {
       <div className='bg-gradient-to-b from-skyblue via-lightskyblue dark:via-[#4298b0] to-white/10 dark:to-black/10 overflow-hidden relative'>
         <div className='container max-w-8xl mx-auto px-5 2xl:px-0 pt-32 md:pt-60 md:pb-68'>
           <div className='relative text-white dark:text-dark text-center md:text-start z-10'>
-            <p className='text-inherit text-2xl font-medium '>Gatherly connects you with local venues where ideas spark, friendships grow,</p>
-             <p className='text-inherit text-2xl font-medium '>and communities thrive. Whether it’s a workshop, a launch, or a simple </p>
-             <p className='text-inherit text-2xl font-medium '>get-together — it all starts with the right place.</p>
+            <div className='mb-6'>
+              <span className='inline-block bg-white/20 backdrop-blur-sm px-4 py-2 rounded-full text-sm font-medium mb-4'>
+                🌟 Building Bridges, Creating Opportunities
+              </span>
+            </div>
+            <h1 className='text-3xl md:text-5xl lg:text-6xl font-bold mb-6 leading-tight'>
+              Where <span className='text-yellow-300'>Dreams</span> Meet <span className='text-yellow-300'>Opportunity</span>
+            </h1>
+            <p className='text-lg md:text-xl font-medium mb-8 leading-relaxed max-w-4xl'>
+              We believe everyone deserves a chance to connect, learn, and grow. Gatherly brings together communities, 
+              creates opportunities for those who need them most, and builds bridges between people who can help each other thrive.
+            </p>
+            <div className='flex flex-col sm:flex-row gap-4 mb-8'>
+              <Link 
+                href="/events" 
+                className='bg-yellow-400 hover:bg-yellow-500 text-black font-bold py-4 px-8 rounded-full transition-all duration-300 transform hover:scale-105 shadow-lg'
+              >
+                Find Your Community
+              </Link>
+              <Link 
+                href="/properties" 
+                className='bg-white/20 backdrop-blur-sm hover:bg-white/30 text-white font-bold py-4 px-8 rounded-full transition-all duration-300 border border-white/30'
+              >
+                Host an Event
+              </Link>
+            </div>
+            <div className='flex items-center gap-4 text-sm opacity-90'>
+              <div className='flex items-center gap-2'>
+                <span className='w-2 h-2 bg-green-400 rounded-full'></span>
+                <span>500+ events hosted</span>
+              </div>
+              <div className='flex items-center gap-2'>
+                <span className='w-2 h-2 bg-green-400 rounded-full'></span>
+                <span>2,000+ lives changed</span>
+              </div>
+              <div className='flex items-center gap-2'>
+                <span className='w-2 h-2 bg-green-400 rounded-full'></span>
+                <span>100% community-driven</span>
+              </div>
+            </div>
           </div>
           <div className='hidden md:block absolute -top-2 -right-68'>
             <Image
@@ -63,7 +100,7 @@ const Hero: React.FC = () => {
                 unoptimized={true}
               />
               <p className='text-sm sm:text-base font-normal text-inherit'>
-                Simplifies Event Planning
+                Creates Opportunities
               </p>
             </div>
             <div className='flex flex-col sm:items-center gap-3'>
@@ -84,7 +121,7 @@ const Hero: React.FC = () => {
                 unoptimized={true}
               />
               <p className='text-sm sm:text-base font-normal text-inherit'>
-                Networking & Opportunity
+                Builds Lasting Connections
               </p>
             </div>
             <div className='flex flex-col sm:items-center gap-3'>
@@ -105,7 +142,7 @@ const Hero: React.FC = () => {
                 unoptimized={true}
               />
               <p className='text-sm sm:text-base font-normal text-inherit'>
-                 Boosts Visibility for Local Venues
+                Supports Local Businesses
               </p>
             </div>
           </div>

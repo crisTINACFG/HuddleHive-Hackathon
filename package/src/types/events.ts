@@ -8,6 +8,7 @@ export type Events = {
   endTime: string
   images: PropertyImage[]
   category: string
+  description?: string
 }
 
 interface PropertyImage {

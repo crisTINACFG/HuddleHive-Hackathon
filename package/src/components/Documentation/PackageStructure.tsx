@@ -14,9 +14,9 @@ export const PackageStructure = () => {
       </h3>
       <div className="rounded-2xl p-6 pt-3 border border-black/10 dark:border-white/20 mt-6">
         <div className="flex items-center gap-4">
-          <h5 className="text-base font-medium mt-3 mb-1">
-            Homely Tailwind Nextjs Templates
-          </h5>
+          <h1 className="text-3xl font-bold text-midnight_text dark:text-white">
+            Gatherly Tailwind Nextjs Templates
+          </h1>
         </div>
         <ul className="ps-0 md:ps-5 list-unstyled">
           <li className="py-2">

@@ -1,8 +1,7 @@
-
 import { Documentation } from "@/components/Documentation/Documentation";
 import { Metadata } from "next";
 export const metadata: Metadata = {
-    title: "Featurs | Homely",
+    title: "Features | Gatherly",
 };
 
 export default function Page() {

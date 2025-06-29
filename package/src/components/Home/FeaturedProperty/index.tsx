@@ -82,7 +82,7 @@ const FeaturedProperty: React.FC = () => {
               <div className="flex items-center gap-2.5">
                 <Icon icon="ph:map-pin" width={28} height={26} className="text-dark/50 dark:text-white/50" />
                 <p className="text-dark/50 dark:text-white/50 text-base">
-                  20 Green Lane, London
+                  20 Green Lane, Kensington, London W8 4RT, UK
                 </p>
               </div>
             </div>

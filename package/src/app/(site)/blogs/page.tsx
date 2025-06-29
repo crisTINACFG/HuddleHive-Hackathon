@@ -3,8 +3,7 @@ import HeroSub from "@/components/shared/HeroSub";
 import { Metadata } from "next";
 
 export const metadata: Metadata = {
-    title:
-        "Blog Grids | Homely ",
+    title: "Blog | Gatherly",
 };
 
 const Blog = () => {
