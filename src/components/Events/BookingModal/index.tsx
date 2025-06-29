@@ -222,7 +222,7 @@ const BookingModal: React.FC<BookingModalProps> = ({ event, isOpen, onClose }) =
               Booking Successful! 🎉
             </h3>
             <p className="text-dark/70 dark:text-white/70 mb-4">
-              Your tickets for "{event.name}" have been booked successfully. You&apos;ll receive a confirmation email shortly.
+              Your tickets for "{event.name}" have been booked successfully. You'll receive a confirmation email shortly.
             </p>
             <div className="text-sm text-dark/50 dark:text-white/50">
               Booking ID: {Math.random().toString(36).substr(2, 9).toUpperCase()}

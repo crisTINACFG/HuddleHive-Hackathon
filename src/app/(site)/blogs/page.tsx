@@ -150,7 +150,7 @@ export default async function Blog() {
                         Share Your Story
                     </h2>
                     <p className="text-xl text-white/90 mb-8 max-w-2xl mx-auto">
-                        Have an inspiring story about community building, event hosting, or venue management? We&apos;d love to hear from you!
+                        Have an inspiring story about community building, event hosting, or venue management? We'd love to hear from you!
                     </p>
                     <div className="flex flex-col sm:flex-row gap-4 justify-center">
                         <Link 

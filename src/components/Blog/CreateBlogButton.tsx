@@ -26,7 +26,7 @@ const CreateBlogButton: React.FC = () => {
             <div className="flex flex-col items-center justify-center">
               <Icon icon="ph:note-pencil" width={48} height={48} className="text-primary mb-4" />
               <h3 className="text-2xl font-bold mb-2 text-dark dark:text-white">Blog creation coming soon!</h3>
-              <p className="text-dark/70 dark:text-white/70 text-center">You&apos;ll soon be able to write and share your own stories with the community.</p>
+              <p className="text-dark/70 dark:text-white/70 text-center">You'll soon be able to write and share your own stories with the community.</p>
             </div>
           </div>
         </div>

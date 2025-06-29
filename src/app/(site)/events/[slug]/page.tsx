@@ -119,7 +119,7 @@ export default function EventDetails() {
                                 <div>
                                     <h3 className='text-dark dark:text-white text-xm'>Limited Availability</h3>
                                     <p className='text-base text-dark/50 dark:text-white/50'>
-                                        Only {item?.tickets} tickets available for this exclusive event. Don&apos;t miss out on this opportunity!
+                                        Only {item?.tickets} tickets available for this exclusive event. Don't miss out on this opportunity!
                                     </p>
                                 </div>
                             </div>
@@ -159,11 +159,11 @@ export default function EventDetails() {
                             </p>
                             <p className='text-dark dark:text-white text-xm '>
                                 The venue at {item?.location} provides the perfect setting for this {item?.category} event, with modern facilities 
-                                and excellent accessibility. Whether you&apos;re looking to expand your network, gain new insights, or simply enjoy 
+                                and excellent accessibility. Whether you're looking to expand your network, gain new insights, or simply enjoy 
                                 a unique experience, this event has something for everyone.
                             </p>
                             <p className='text-dark dark:text-white text-xm '>
-                                Don&apos;t miss this opportunity to be part of something special. Secure your ticket now for just £{item?.price} 
+                                Don't miss this opportunity to be part of something special. Secure your ticket now for just £{item?.price} 
                                 and join us for what promises to be an exceptional {item?.category} event.
                             </p>
                         </div>

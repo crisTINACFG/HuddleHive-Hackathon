@@ -13,7 +13,7 @@ const Mission: React.FC = () => {
             Building a <span className='text-blue-600 dark:text-blue-400'>Tech-Powered</span> Future for Everyone
           </h2>
           <p className='text-xl text-dark/70 dark:text-white/70 max-w-3xl mx-auto leading-relaxed'>
-            We&apos;re connecting communities through technology and sustainable energy solutions. Every event we host advances innovation, 
+            We're connecting communities through technology and sustainable energy solutions. Every event we host advances innovation, 
             empowers women in tech, and builds bridges toward a greener, more inclusive future. Partnering with industry leaders like 
             <span className='text-green-600 dark:text-green-400 font-semibold'> Octopus Energy</span> and 
             <span className='text-blue-600 dark:text-blue-400 font-semibold'> BCS, The Chartered Institute for IT</span> to accelerate clean energy innovation and professional development.
@@ -32,9 +32,9 @@ const Mission: React.FC = () => {
                     <Icon icon="ph:laptop" className="text-green-600 dark:text-green-400 text-xl" />
                   </div>
                   <div>
-                    <h4 className='font-semibold text-dark dark:text-white mb-2'>Sarah&apos;s Tech Journey</h4>
+                    <h4 className='font-semibold text-dark dark:text-white mb-2'>Sarah's Tech Journey</h4>
                     <p className='text-dark/70 dark:text-white/70 text-sm leading-relaxed'>
-                      "After being the only woman in my engineering team, I found Gatherly&apos;s Women in Tech events. Now I lead a diverse team 
+                      "After being the only woman in my engineering team, I found Gatherly's Women in Tech events. Now I lead a diverse team 
                       developing renewable energy software and mentor other women entering the field."
                     </p>
                   </div>
@@ -49,7 +49,7 @@ const Mission: React.FC = () => {
                   <div>
                     <h4 className='font-semibold text-dark dark:text-white mb-2'>The HuddleHive Hackathon Success</h4>
                     <p className='text-dark/70 dark:text-white/70 text-sm leading-relaxed'>
-                      "Our partnership with Octopus Energy and BCS for the HuddleHive Women Hackathon has been incredible. We&apos;ve discovered 
+                      "Our partnership with Octopus Energy and BCS for the HuddleHive Women Hackathon has been incredible. We've discovered 
                       breakthrough clean energy solutions and empowered dozens of women to pursue careers in sustainable technology."
                     </p>
                   </div>

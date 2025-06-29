@@ -68,7 +68,7 @@ const GetInTouch: React.FC = () => {
             </h3>
             <p className='text-white/90 mb-6 leading-relaxed'>
               Whether you want to host an event, join our community, or support our mission in other ways, 
-              we&apos;d love to hear from you. Every action, no matter how small, contributes to positive change.
+              we'd love to hear from you. Every action, no matter how small, contributes to positive change.
             </p>
             <div className='flex flex-col sm:flex-row gap-4'>
               <Link 
@@ -92,7 +92,7 @@ const GetInTouch: React.FC = () => {
             </h3>
             <p className='text-white/90 mb-6 leading-relaxed'>
               Your support helps us provide free events, maintain our spaces, and create more opportunities for those who need them most. 
-              Every contribution makes a real difference in someone&apos;s life.
+              Every contribution makes a real difference in someone's life.
             </p>
             <div className='space-y-4'>
               <div className='flex items-center gap-3 text-white/90'>
