@@ -2,11 +2,10 @@ export type PropertyHomes = {
   name: string
   slug: string
   location: string
-  rate: string
-  beds: number
-  baths: number
-  area: number
+  price: string
+  capacity: number
   images: PropertyImage[]
+  category: string
 }
 
 interface PropertyImage {
