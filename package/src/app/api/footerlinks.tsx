@@ -1,8 +1,11 @@
 import { footerlinks } from "@/types/footerlinks"
 
 export const FooterLinks: footerlinks[] = [
-    { label: 'Cristina Gheorghe', href: 'https://www.linkedin.com/in/cristina-gheorghe-0a6053285/' },
-    { label: 'Arani ...', href: '/not-found' },
-    { label: 'Maryam Karous', href: 'https://www.linkedin.com/in/maryam-karous-78b674280/' },
-    { label: 'Janvi...', href: '/not-found' },
+    //{ label: 'Luxury Villas', href: '/luxury-villa' },
+    //{ label: 'Residential Homes', href: '/residential-homes' },
+    //{ label: 'Apartments', href: '/appartment' },
+    { label: 'Contact Us', href: '/contactus' },
+    { label: 'Blog', href: '/blogs' },
+    { label: '404 Page', href: '/not-found' },
+    //{ label: 'Documentation', href: '/documentation' },
 ]

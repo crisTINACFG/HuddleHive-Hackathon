@@ -2,88 +2,210 @@ import { PropertyHomes } from '@/types/properyHomes'
 
 export const propertyHomes: PropertyHomes[] = [
   {
-    name: 'Paddington Works',
-    slug: 'paddington-works',
-    location: '8 Hermitage Street, Paddington, London W2 1BE, UK',
-    price: '2000',
-    capacity: 60,
+    name: 'Serenity height villas',
+    slug: 'serenity-height-villas',
+    location: '15 s aurora ave, miami',
+    rate: '570,000',
+    beds: 4,
+    baths: 3,
+    area: 120,
     images: [
-      { src: '/images/properties/property4/pad3.jpg' },
-      { src: '/images/properties/property4/pad2.jpg' },
-      { src: '/images/properties/property4/pad1.jpg' },
-      { src: '/images/properties/property4/pad4.jpg' }
-  ],
-    category: 'office'
+      {
+        src: "/images/properties/property1/property1.jpg",
+      },
+      {
+        src: "/images/properties/property1/image-2.jpg"
+      },
+      {
+        src: "/images/properties/property1/image-3.jpg"
+      },
+      {
+        src: "/images/properties/property1/image-4.jpg"
+      },
+    ]
   },
   {
-    name: 'Monmouth Coffee',
-    slug: 'monmouth-coffee',
-    location: '27 Monmouth St, Covent Garden, London WC2H 9EU, UK',
-    price: '400',
-    capacity: 60,
+    name: 'Mountain retreat villa',
+    slug: 'mountain-retreat-villa',
+    location: '18 s aurora ave, miami',
+    rate: '575,000',
+    beds: 5,
+    baths: 2,
+    area: 150,
     images: [
-      { src: '/images/properties/property1/mon2.jpg' },
-      { src: '/images/properties/property1/mon1.jpg' },
-      { src: '/images/properties/property1/mon3.jpg' },
-      { src: '/images/properties/property1/mon4.jpg' }
-    ],
-    category: 'Cafe'
+      {
+        src: "/images/properties/property2/property2.jpg",
+      },
+      {
+        src: "/images/properties/property2/image-2.jpg"
+      },
+      {
+        src: "/images/properties/property2/image-3.jpg"
+      },
+      {
+        src: "/images/properties/property2/image-4.jpg"
+      },
+    ]
   },
   {
-    name: 'The British Museum',
-    slug: 'the-british-museum',
-    location: 'Great Russell St, Bloomsbury, London WC1B 3DG, UK',
-    price: '4000',
-    capacity: 1500,
+    name: 'Modern luxe villa',
+    slug: 'modern-luxe-villa',
+    location: '20 s aurora ave, miami',
+    rate: '580,000',
+    beds: 3,
+    baths: 4,
+    area: 180,
     images: [
-      { src: '/images/properties/property2/BM2.jpg' },
-      { src: '/images/properties/property2/BM3.jpg' },
-      { src: '/images/properties/property2/BM1.jpg' },
-      { src: '/images/properties/property2/BM4.jpg' }
-    ],
-    category: 'community hall'
+      {
+        src: "/images/properties/property3/property3.jpg",
+      },
+      {
+        src: "/images/properties/property3/image-2.jpg"
+      },
+      {
+        src: "/images/properties/property3/image-3.jpg"
+      },
+      {
+        src: "/images/properties/property3/image-4.jpg"
+      },
+    ]
   },
   {
-    name: 'University of Surrey',
-    slug: 'university-of-surrey',
-    location: 'Guildford, Surrey GU2 7XH, UK',
-    price: '15000',
-    capacity: 3000,
-    images:  [
-      { src: '/images/properties/property3/sur1.jpg' },
-      { src: '/images/properties/property3/sur2.jpg' },
-      { src: '/images/properties/property3/sur3.jpg' },
-      { src: '/images/properties/property3/sur4.jpg' }
-  ],
-    category: 'univeristy'
-  },
-  
-  {
-    name: 'Hyde Park',
-    slug: 'hyde-park',
-    location: 'London W2 2UH, UK',
-    price: '0',
-    capacity: 35000,
+    name: 'Royal orchid villas',
+    slug: 'royal-orchid-villas',
+    location: '12 emerald heights, los angeles',
+    rate: '590,000',
+    beds: 6,
+    baths: 3,
+    area: 200,
     images: [
-      { src: '/images/properties/property5/hyde1.jpg' },
-      { src: '/images/properties/property5/hyde2.jpg' },
-      { src: '/images/properties/property5/hyde3.jpg' },
-      { src: '/images/properties/property5/hyde4.jpg' }  
-    ],
-    category: 'community hall'
+      {
+        src: "/images/properties/property4/property4.jpg",
+      },
+      {
+        src: "/images/properties/property4/image-2.jpg"
+      },
+      {
+        src: "/images/properties/property4/image-3.jpg"
+      },
+      {
+        src: "/images/properties/property4/image-4.jpg"
+      },
+    ]
   },
   {
-    name: 'Google Campus London',
-    slug: 'google-campus-london',
-    location: '4-5 Bonhill St, London EC2A 4BX, UK',
-    price: '1500',
-    capacity: 500,
+    name: 'Grand vista villas',
+    slug: 'grand-cista-villas',
+    location: '25 skyline boulevard, san diego',
+    rate: '710,000',
+    beds: 2,
+    baths: 1,
+    area: 90,
     images: [
-      { src: '/images/properties/property6/gog1.jpg' },
-      { src: '/images/properties/property6/gog2.jpg' },
-      { src: '/images/properties/property6/gog3.jpg' },
-      { src: '/images/properties/property6/gog4.jpg' }
-    ],
-    category: 'office '
+      {
+        src: "/images/properties/property5/property5.jpg",
+      },
+      {
+        src: "/images/properties/property5/image-2.jpg"
+      },
+      {
+        src: "/images/properties/property5/image-3.jpg"
+      },
+      {
+        src: "/images/properties/property5/image-4.jpg"
+      },
+    ]
+  },
+  {
+    name: 'Imperial pearl villas',
+    slug: 'imperial-pearn-villas',
+    location: '18 sapphire bay road, naples',
+    rate: '630,000',
+    beds: 4,
+    baths: 2,
+    area: 130,
+    images: [
+      {
+        src: "/images/properties/property6/property6.jpg",
+      },
+      {
+        src: "/images/properties/property6/image-2.jpg"
+      },
+      {
+        src: "/images/properties/property6/image-3.jpg"
+      },
+      {
+        src: "/images/properties/property6/image-4.jpg"
+      },
+    ]
+  },
+  {
+    name: 'Opulent haven villas',
+    slug: 'opulent-heven-villas',
+    location: '22 ocean breeze drive, malibu',
+    rate: '620,000',
+    beds: 6,
+    baths: 3,
+    area: 180,
+    images: [
+      {
+        src: "/images/properties/property7.jpg",
+      },
+      {
+        src: "/images/properties/property9.jpg"
+      },
+      {
+        src: "/images/properties/property2.jpg"
+      },
+      {
+        src: "/images/properties/property5.jpg"
+      },
+    ]
+  },
+  {
+    name: 'Elite crest villas',
+    slug: 'elite-crest-villas',
+    location: '10 palm view lane, beverly hills',
+    rate: '750,000',
+    beds: 4,
+    baths: 3,
+    area: 150,
+    images: [
+      {
+        src: "/images/properties/property8.jpg",
+      },
+      {
+        src: "/images/properties/property2.jpg"
+      },
+      {
+        src: "/images/properties/property4.jpg"
+      },
+      {
+        src: "/images/properties/property7.jpg"
+      },
+    ]
+  },
+  {
+    name: 'Majestic bay villas',
+    slug: 'majestic-bay-villas',
+    location: '8 sunset cove, miami beach',
+    rate: '680,000',
+    beds: 4,
+    baths: 2,
+    area: 120,
+    images: [
+      {
+        src: "/images/properties/property9.jpg",
+      },
+      {
+        src: "/images/properties/property3.jpg"
+      },
+      {
+        src: "/images/properties/property5.jpg"
+      },
+      {
+        src: "/images/properties/property9.jpg"
+      },
+    ]
   },
 ]
