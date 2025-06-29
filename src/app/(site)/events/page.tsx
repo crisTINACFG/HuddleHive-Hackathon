@@ -17,7 +17,7 @@ export default function EventsPage() {
         <>
             <HeroSub
                 title="Discover exciting events."
-                description="Find upcoming events and opportunities you can't miss"
+                description="Find upcoming events and opportunities you can&apos;t miss"
                 badge="Events"
             />
 

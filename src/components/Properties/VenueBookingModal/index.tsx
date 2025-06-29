@@ -398,7 +398,7 @@ const VenueBookingModal: React.FC<VenueBookingModalProps> = ({ venue, isOpen, on
               Venue Booked Successfully! 🎉
             </h3>
             <p className="text-dark/70 dark:text-white/70 mb-4">
-              Your booking for "{venue.name}" has been confirmed. You'll receive a confirmation email shortly.
+              Your booking for "{venue.name}" has been confirmed. You&apos;ll receive a confirmation email shortly.
             </p>
             <div className="text-sm text-dark/50 dark:text-white/50">
               Booking ID: {Math.random().toString(36).substr(2, 9).toUpperCase()}
