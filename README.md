@@ -1,4 +1,4 @@
-# HuddleHive - Women in Tech Community Platform
+# Gatherly - Women in Tech Community Platform
 
 A modern, responsive web platform designed to connect and empower women in technology through events, networking opportunities, and community support. Built with Next.js, TypeScript, and Tailwind CSS.
 
