@@ -86,19 +86,4 @@ export const propertyHomes: PropertyHomes[] = [
     ],
     category: 'office '
   },
-  // beyond this point its actually events
-  {
-    name: 'HuddleHive Hackathon',
-    slug: 'huddle-hive-hackathon',
-    location: 'Octopus Energy (London), 5th Floor, United Kingdom House, 164-182 Oxford St, London W1D 1NN, UK',
-    price: '1500',
-    capacity: 500,
-    images: [
-      { src: '/images/properties/property6/gog1.jpg' },
-      { src: '/images/properties/property6/gog2.jpg' },
-      { src: '/images/properties/property6/gog3.jpg' },
-      { src: '/images/properties/property6/gog4.jpg' }
-    ],
-    category: 'office '
-  },
 ]

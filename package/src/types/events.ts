@@ -3,6 +3,9 @@ export type Events = {
   location: string
   price: string
   tickets: number
+  date: string
+  startTime: string
+  endTime: string
   images: PropertyImage[]
   category: string
 }

@@ -1,10 +1,10 @@
 import PropertyCard from '@/components/Home/Properties/Card/Card'
 import { propertyHomes } from '@/app/api/propertyhomes'
 
-const OfficeSpace: React.FC = () => {
-    // Filter for office category only
+const CommunityHalls: React.FC = () => {
+    // Filter for community hall category
     const filtered = propertyHomes.filter(
-        (item) => item.category.trim().toLowerCase() === 'office'
+        (item) => item.category.trim().toLowerCase() === 'community hall'
     );
     return (
         <section className='pt-0!'>
@@ -21,4 +21,4 @@ const OfficeSpace: React.FC = () => {
     )
 }
 
-export default OfficeSpace;
+export default CommunityHalls; 
