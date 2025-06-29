@@ -11,6 +11,6 @@ export type Events = {
   description?: string
 }
 
-interface PropertyImage {
+export interface PropertyImage {
   src: string;
 }

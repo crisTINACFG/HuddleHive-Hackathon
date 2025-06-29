@@ -1,12 +1,14 @@
 "use client"
-import React from 'react';
+import React, { useState } from 'react';
 import { events } from '@/app/api/events';
 import { useParams } from "next/navigation";
 import { Icon } from '@iconify/react';
 import Image from 'next/image';
+import BookingModal from '@/components/Events/BookingModal';
 
 export default function EventDetails() {
     const { slug } = useParams();
+    const [isBookingModalOpen, setIsBookingModalOpen] = useState(false);
 
     const item = events.find((event) => {
         const eventSlug = event.name.toLowerCase().replace(/\s+/g, '-').replace(/[^a-z0-9-]/g, '');
@@ -20,6 +22,14 @@ export default function EventDetails() {
             </div>
         );
     }
+
+    const handleBookNow = () => {
+        setIsBookingModalOpen(true);
+    };
+
+    const handleCloseModal = () => {
+        setIsBookingModalOpen(false);
+    };
 
     return (
         <section className="!pt-44 pb-20 relative" >
@@ -119,7 +129,7 @@ export default function EventDetails() {
                                 <div>
                                     <h3 className='text-dark dark:text-white text-xm'>Venue Location</h3>
                                     <p className='text-base text-dark/50 dark:text-white/50'>
-                                        Located at {item?.location}, easily accessible with excellent transport links.
+                                        {item?.location}
                                     </p>
                                 </div>
                             </div>
@@ -306,7 +316,9 @@ export default function EventDetails() {
                                 £{item?.price}
                             </h4>
                             <p className='text-sm text-dark/50 dark:text-white'>Ticket Price</p>
-                            <button className='py-4 px-8 bg-primary text-white rounded-full w-full block text-center hover:bg-dark duration-300 text-base mt-8 hover:cursor-pointer'>
+                            <button 
+                                onClick={handleBookNow}
+                                className='py-4 px-8 bg-primary text-white rounded-full w-full block text-center hover:bg-dark duration-300 text-base mt-8 hover:cursor-pointer'>
                                 Book Now
                             </button>
                             <div className="absolute right-0 top-4 -z-[1]">
@@ -316,6 +328,13 @@ export default function EventDetails() {
                     </div>
                 </div>
             </div>
+            {isBookingModalOpen && (
+                <BookingModal
+                    isOpen={isBookingModalOpen}
+                    onClose={handleCloseModal}
+                    event={item}
+                />
+            )}
         </section>
     );
 } 

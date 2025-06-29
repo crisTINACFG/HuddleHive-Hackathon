@@ -10,7 +10,7 @@ export const testimonials: Testimonial[] = [
     },
     {
         slug: 'bcs-partnership',
-        image: '/images/testimonial/mark.jpg',
+        image: 'https://profiles.ucl.ac.uk/9714-james-wilson/photo',
         name: 'Prof. Dr. James Wilson',
         review: 'As BCS, The Chartered Institute for IT, we\'re proud to support Gatherly\'s mission to empower women in technology. The HuddleHive Women Hackathon exemplifies our commitment to professional development and diversity in IT. This platform is exactly what the industry needs to bridge the gender gap in technology.',
         position: 'Director of Professional Development, BCS'
@@ -31,8 +31,8 @@ export const testimonials: Testimonial[] = [
     },
     {
         slug: 'tech-community-building',
-        image: '/images/users/alkesh.jpg',
-        name: 'Fatima Al-Zahra',
+        image: '/images/users/maryam-karous.jpg',
+        name: 'Maryam Karous',
         review: 'My AI startup was struggling until I connected with other tech entrepreneurs through Gatherly. The networking events led to partnerships that transformed our company and helped us hire three local developers. The tech community here is incredible.',
         position: 'AI Startup Founder'
     },
@@ -45,14 +45,14 @@ export const testimonials: Testimonial[] = [
     },
     {
         slug: 'mental-health-tech',
-        image: '/images/users/roddy.jpg',
+        image: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSNz1dECw710qWqJydW4YYIOY63jRJ_d18gvg&s',
         name: 'Emma Chen',
         review: 'During my darkest days as a software engineer dealing with burnout, the mental health support groups at Gatherly provided a safe space where I felt understood. The connections I made there literally saved my career. Now I volunteer to help other tech professionals.',
         position: 'Software Engineer'
     },
     {
         slug: 'senior-tech-connection',
-        image: '/images/users/roddy.jpg',
+        image: 'https://images.mubicdn.net/images/cast_member/35273/cache-75546-1370272473/image-w856.jpg',
         name: 'Robert Wilson',
         review: 'After retirement from the energy sector, I felt disconnected from the tech world. The senior tech programs at Gatherly gave me a new purpose. I now teach coding to other seniors and help develop energy efficiency apps for local communities.',
         position: 'Senior Tech Mentor'

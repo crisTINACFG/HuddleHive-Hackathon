@@ -1,14 +1,26 @@
+"use client"
 import { Events } from '@/types/events'
 import { Icon } from '@iconify/react'
 import Image from 'next/image'
 import Link from 'next/link'
+import { useState } from 'react'
+import BookingModal from '../BookingModal'
 
 const EventCard: React.FC<{ item: Events }> = ({ item }) => {
   const { name, location, price, tickets, images, category, date } = item
+  const [isBookingModalOpen, setIsBookingModalOpen] = useState(false)
 
   const mainImage = images[0]?.src;
   const slug = name.toLowerCase().replace(/\s+/g, '-').replace(/[^a-z0-9-]/g, '');
   const eventLink = `/events/${slug}`;
+
+  const handleBookNow = () => {
+    setIsBookingModalOpen(true);
+  };
+
+  const handleCloseModal = () => {
+    setIsBookingModalOpen(false);
+  };
 
   return (
     <div>
@@ -52,9 +64,14 @@ const EventCard: React.FC<{ item: Events }> = ({ item }) => {
               Link: {eventLink}
             </p>
           </div>
-          <div>
+          <div className='flex flex-col gap-2'>
             <button className='text-base font-normal text-primary px-5 py-2 rounded-full bg-primary/10'>
               £{price}
+            </button>
+            <button 
+              onClick={handleBookNow}
+              className='text-base font-normal text-white px-5 py-2 rounded-full bg-primary hover:bg-dark duration-300'>
+              Book
             </button>
           </div>
         </div>
@@ -79,6 +96,13 @@ const EventCard: React.FC<{ item: Events }> = ({ item }) => {
           </div>
         </div>
       </div>
+      {isBookingModalOpen && (
+        <BookingModal
+          isOpen={isBookingModalOpen}
+          onClose={handleCloseModal}
+          event={item}
+        />
+      )}
     </div>
   )
 }
