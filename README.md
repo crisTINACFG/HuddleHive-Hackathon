@@ -1,15 +1,15 @@
-# Gatherly - Women in Tech Community Platform
+# Gatherly - Community and Inclusivity Platform
 
-A modern, responsive web platform designed to connect and empower women in technology through events, networking opportunities, and community support. Built with Next.js, TypeScript, and Tailwind CSS.
+A modern, responsive web platform designed to connect and individuals in technology through events, networking opportunities, and community support. Built with Next.js, TypeScript, and Tailwind CSS.
 
 ## 🌟 Project Overview
 
-HuddleHive is a comprehensive platform that brings together women in tech through various events and activities. The platform features:
+Gatherly is a comprehensive platform that brings together people in tech through various events and activities. The platform features:
 
 - **Event Management**: Browse and register for tech events, hackathons, and workshops
 - **Venue Showcase**: Explore different venues and spaces for events
 - **Community Building**: Connect with like-minded professionals
-- **Resource Sharing**: Access documentation and educational content
+- **Resource Sharing**: Access documentation and educational content through blogs
 
 ## ✨ Key Features
 
@@ -28,8 +28,6 @@ HuddleHive is a comprehensive platform that brings together women in tech throug
 - **Schools & Universities**: Educational institutions
 - **Cafés & Restaurants**: Casual meeting spaces
 - **Community Halls**: Event and gathering spaces
-- **Luxury Villas**: Premium event venues
-- **Apartments**: Residential event spaces
 
 ### 🎨 User Experience
 - **Responsive Design**: Optimized for all devices
@@ -78,10 +76,6 @@ HuddleHive-Hackathon/
 ### Installation
 
 1. **Clone the repository**
-   ```bash
-   git clone https://github.com/your-username/HuddleHive-Hackathon.git
-   cd HuddleHive-Hackathon
-   ```
 
 2. **Navigate to the package directory**
    ```bash
@@ -168,20 +162,6 @@ Supabase is configured for data storage. Update connection in:
 - `/schools-universities` - Educational venues
 - `/cafes-restaurants` - Food and beverage venues
 - `/community-halls` - Community gathering spaces
-- `/luxury-villa` - Premium venues
-- `/appartment` - Residential venues
-
-## 🤝 Contributing
-
-1. Fork the repository
-2. Create a feature branch (`git checkout -b feature/amazing-feature`)
-3. Commit your changes (`git commit -m 'Add amazing feature'`)
-4. Push to the branch (`git push origin feature/amazing-feature`)
-5. Open a Pull Request
-
-## 📄 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
 ## 🙏 Acknowledgments
 
@@ -191,10 +171,13 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 - **Tailwind CSS** - Utility-first CSS framework
 - **Iconify** - Comprehensive icon library
 
-## 📞 Support
+## The Team 
 
-For support, email support@huddlehive.com or join our community discussions.
+Maryam Karous www.linkedin.com/in/maryam-karous-78b674280
+Cristina Gheorghe https://www.linkedin.com/in/cristina-gheorghe-0a6053285/
+Janvi Goricha
+Arani Gnanavalagan
 
 ---
 
-**Built with ❤️ for the Women in Tech community**
+**Built with ❤️ from the Women in Tech**
