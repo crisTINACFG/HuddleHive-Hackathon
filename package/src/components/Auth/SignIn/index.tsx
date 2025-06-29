@@ -1,95 +1,62 @@
 "use client";
-import { signIn, useSession } from "next-auth/react";
-import Link from "next/link";
-import { useRouter } from "next/navigation";
-import { useContext, useEffect, useState } from "react";
-import toast, { Toaster } from 'react-hot-toast';
-import AuthDialogContext from "@/app/context/AuthDialogContext";
-import Logo from "@/components/Layout/Header/BrandLogo/Logo";
+import React, { useState } from 'react';
+import ComingSoonModal from '@/components/shared/ComingSoonModal';
 
 const Signin = ({ signInOpen }: { signInOpen?: any }) => {
-  const { data: session } = useSession();
-  const [username, setUsername] = useState("admin");
-  const [password, setPassword] = useState("admin123");
-  const [error, setError] = useState("");
-  const authDialog = useContext(AuthDialogContext);
+  const [showComingSoon, setShowComingSoon] = useState(false);
 
+  const handleSignInClick = () => {
+    setShowComingSoon(true);
+  };
 
-  const handleSubmit = async (e: any) => {
-    const notify = () => toast('Here is your toast.');
-    e.preventDefault();
-    const result = await signIn("credentials", {
-      redirect: false,
-      username,
-      password,
-    });
-    if (result?.error) {
-      setError(result.error);
-    }
-    if (result?.status === 200) {
-      setTimeout(() => {
-        signInOpen(false);
-      }, 1200);
-      authDialog?.setIsSuccessDialogOpen(true);
-      setTimeout(() => {
-        authDialog?.setIsSuccessDialogOpen(false);
-      }, 1100);
-    } else {
-      authDialog?.setIsFailedDialogOpen(true);
-      setTimeout(() => {
-        authDialog?.setIsFailedDialogOpen(false);
-      }, 1100);
+  const handleCloseModal = () => {
+    setShowComingSoon(false);
+    if (signInOpen) {
+      signInOpen(false);
     }
   };
 
   return (
     <>
       <div className="mb-10 text-center flex justify-center">
-        <Logo />
+        <div className="text-2xl font-bold text-primary">Gatherly</div>
       </div>
-      <Toaster />
-      <form onSubmit={handleSubmit}>
-        <div className="mb-[22px]">
-          <input
-            type="text"
-            placeholder="Username"
-            required
-            value={username}
-            onChange={(e) => setUsername(e.target.value)}
-            className="w-full rounded-2xl border placeholder:text-gray-400 border-black/10 dark:border-white/20 border-solid bg-transparent px-5 py-3 text-base text-dark outline-none transition  focus:border-primary focus-visible:shadow-none dark:border-border_color dark:text-white dark:focus:border-primary"
-          />
-        </div>
-        <div className="mb-[22px]">
-          <input
-            type="password"
-            required
-            value={password}
-            placeholder="Password"
-            onChange={(e) => setPassword(e.target.value)}
-            className="w-full rounded-2xl border border-black/10 dark:border-white/20 border-solid bg-transparent px-5 py-3 text-base text-dark outline-none transition  focus:border-primary focus-visible:shadow-none dark:border-border_color dark:text-white dark:focus:border-primary"
-          />
-        </div>
-        <button
-          type="submit"
-          className="flex w-full cursor-pointer items-center justify-center rounded-2xl border border-primary bg-primary hover:bg-transparent hover:text-primary px-5 py-3 text-base text-white transition duration-300 ease-in-out "
-        >
-          Sign In
-        </button>
-      </form>
-      <div className="text-center">
-        <Link
-          href="/"
-          className="mb-2 text-base text-dark hover:text-primary dark:text-white dark:hover:text-primary"
-        >
-          Forget Password?
-        </Link>
+      
+      <div className="text-center mb-8">
+        <h2 className="text-2xl font-bold text-dark dark:text-white mb-2">
+          Welcome Back!
+        </h2>
+        <p className="text-dark/70 dark:text-white/70">
+          Sign in to access your account and manage your events.
+        </p>
       </div>
-      <p className="text-body-secondary text-base text-center">
-        Not a member yet?{" "}
-        <Link href="/" className="text-primary hover:underline">
-          Sign Up
-        </Link>
-      </p>
+
+      <button
+        onClick={handleSignInClick}
+        className="flex w-full cursor-pointer items-center justify-center rounded-2xl border border-primary bg-primary hover:bg-transparent hover:text-primary px-5 py-3 text-base text-white transition duration-300 ease-in-out"
+      >
+        Sign In
+      </button>
+
+      <div className="text-center mt-6">
+        <p className="text-body-secondary text-base">
+          Not a member yet?{" "}
+          <button 
+            onClick={handleSignInClick}
+            className="text-primary hover:underline"
+          >
+            Sign Up
+          </button>
+        </p>
+      </div>
+
+      <ComingSoonModal
+        isOpen={showComingSoon}
+        onClose={handleCloseModal}
+        title="Authentication coming soon!"
+        description="User authentication and account management features will be available soon. You'll be able to create accounts, sign in, and manage your profile."
+        icon="ph:user-circle"
+      />
     </>
   );
 };

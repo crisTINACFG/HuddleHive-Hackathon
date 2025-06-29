@@ -1,115 +1,62 @@
 "use client";
-import Link from "next/link";
-import { useRouter } from "next/navigation";
-import toast from "react-hot-toast";
-import Logo from "@/components/Layout/Header/BrandLogo/Logo";
-import { useContext, useState } from "react";
-import AuthDialogContext from "@/app/context/AuthDialogContext";
+import React, { useState } from 'react';
+import ComingSoonModal from '@/components/shared/ComingSoonModal';
 
 const SignUp = ({ signUpOpen }: { signUpOpen?: any }) => {
-  const router = useRouter();
-  const [loading, setLoading] = useState(false);
-  const authDialog = useContext(AuthDialogContext);
+  const [showComingSoon, setShowComingSoon] = useState(false);
 
-  const handleSubmit = (e: any) => {
-    e.preventDefault();
+  const handleSignUpClick = () => {
+    setShowComingSoon(true);
+  };
 
-    setLoading(true);
-    const data = new FormData(e.currentTarget);
-    const value = Object.fromEntries(data.entries());
-    const finalData = { ...value };
-
-    fetch("/api/register", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(finalData),
-    })
-      .then((res) => res.json())
-      .then((data) => {
-        toast.success("Successfully registered");
-        setLoading(false);
-        router.push("/");
-      })
-      .catch((err) => {
-        toast.error(err.message);
-        setLoading(false);
-      });
-    setTimeout(() => {
+  const handleCloseModal = () => {
+    setShowComingSoon(false);
+    if (signUpOpen) {
       signUpOpen(false);
-    }, 1200);
-    authDialog?.setIsUserRegistered(true);
-
-    setTimeout(() => {
-      authDialog?.setIsUserRegistered(false);
-    }, 1100);
+    }
   };
 
   return (
     <>
       <div className="mb-10 text-center mx-auto inline-block max-w-[160px]">
-        <Logo />
+        <div className="text-2xl font-bold text-primary">Gatherly</div>
       </div>
 
-      <form onSubmit={handleSubmit}>
-        <div className="mb-[22px]">
-          <input
-            type="text"
-            placeholder="Name"
-            name="name"
-            required
-            className="w-full rounded-md border border-black/10 dark:border-white/20 border-solid bg-transparent px-5 py-3 text-base text-dark outline-none transition placeholder:text-gray-300 focus:border-primary focus-visible:shadow-none dark:text-white dark:focus:border-primary"
-          />
-        </div>
-        <div className="mb-[22px]">
-          <input
-            type="email"
-            placeholder="Email"
-            name="email"
-            required
-            className="w-full rounded-md border border-black/10 dark:border-white/20 border-solid bg-transparent px-5 py-3 text-base text-dark outline-none transition placeholder:text-gray-300 focus:border-primary focus-visible:shadow-none dark:text-white dark:focus:border-primary"
-          />
-        </div>
-        <div className="mb-[22px]">
-          <input
-            type="password"
-            placeholder="Password"
-            name="password"
-            required
-            className="w-full rounded-md border border-black/10 dark:border-white/20 border-solid bg-transparent px-5 py-3 text-base text-dark outline-none transition placeholder:text-gray-300 focus:border-primary focus-visible:shadow-none dark:text-white dark:focus:border-primary"
-          />
-        </div>
-        <div className="mb-9">
+      <div className="text-center mb-8">
+        <h2 className="text-2xl font-bold text-dark dark:text-white mb-2">
+          Join Our Community!
+        </h2>
+        <p className="text-dark/70 dark:text-white/70">
+          Create an account to start hosting and joining events.
+        </p>
+      </div>
+
+      <button
+        onClick={handleSignUpClick}
+        className="flex w-full cursor-pointer items-center justify-center rounded-md bg-primary px-5 py-3 text-base text-white transition duration-300 ease-in-out hover:!bg-darkprimary dark:hover:!bg-darkprimary"
+      >
+        Sign Up
+      </button>
+
+      <div className="text-center mt-6">
+        <p className="text-base">
+          Already have an account?{" "}
           <button
-            type="submit"
-            className="flex w-full cursor-pointer items-center justify-center rounded-md bg-primary px-5 py-3 text-base text-white transition duration-300 ease-in-out hover:!bg-darkprimary dark:hover:!bg-darkprimary"
+            onClick={handleSignUpClick}
+            className="text-primary hover:bg-darkprimary hover:underline"
           >
-            Sign Up
+            Sign In
           </button>
-        </div>
-      </form>
+        </p>
+      </div>
 
-      <p className="text-center mb-4 text-base">
-        By creating an account you are agree with our{" "}
-        <Link href="/" className="text-primary hover:underline">
-          Privacy
-        </Link>{" "}
-        and{" "}
-        <Link href="/" className="text-primary hover:underline">
-          Policy
-        </Link>
-      </p>
-
-      <p className="text-center text-base">
-        Already have an account?
-        <Link
-          href="/"
-          className="pl-2 text-primary hover:bg-darkprimary hover:underline"
-        >
-          Sign In
-        </Link>
-      </p>
+      <ComingSoonModal
+        isOpen={showComingSoon}
+        onClose={handleCloseModal}
+        title="Account creation coming soon!"
+        description="User registration and account creation features will be available soon. You'll be able to create accounts, manage your profile, and access exclusive features."
+        icon="ph:user-plus"
+      />
     </>
   );
 };
