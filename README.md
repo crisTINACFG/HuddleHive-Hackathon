@@ -79,83 +79,14 @@ HuddleHive-Hackathon/
 2. **Install dependencies**
    ```bash
    npm install
-   # or
-   yarn install
-   # or
-   pnpm install
-   ```
-
-3. **Set up environment variables**
-   Create a `.env.local` file in the root directory:
-   ```env
-   NEXTAUTH_SECRET=your-secret-key
-   NEXTAUTH_URL=http://localhost:3000
-   SUPABASE_URL=your-supabase-url
-   SUPABASE_ANON_KEY=your-supabase-anon-key
-   ```
-
-4. **Run the development server**
+   
+3. **Run the development server**
    ```bash
    npm run dev
-   # or
-   yarn dev
-   # or
-   pnpm dev
-   ```
 
-5. **Open your browser**
+4. **Open your browser**
    Navigate to [http://localhost:3000](http://localhost:3000)
 
-## 📖 Available Scripts
-
-- `npm run dev` - Start development server
-- `npm run build` - Build for production
-- `npm run start` - Start production server
-- `npm run lint` - Run ESLint
-- `npm run type-check` - Run TypeScript type checking
-
-## 🎨 Customization
-
-### Styling
-The project uses Tailwind CSS for styling. Custom styles can be added in:
-- `src/app/globals.css` - Global styles
-- Component-specific CSS classes
-
-### Content Management
-- **Events**: Edit `src/app/api/events.tsx`
-- **Venues**: Edit `src/app/api/propertyhomes.tsx`
-- **Navigation**: Edit `src/app/api/navlink.tsx`
-
-### Theme Configuration
-- Colors and branding: `tailwind.config.js`
-- Component styling: `src/components/ui/`
-
-## 🔧 Configuration
-
-### Authentication
-The project is configured with NextAuth.js. Configure providers in:
-- `src/app/api/auth/[...nextauth]/route.js`
-
-### Database
-Supabase is configured for data storage. Update connection in:
-- `src/lib/supabaseClient.ts`
-
-## 📱 Pages & Routes
-
-### Public Pages
-- `/` - Homepage with featured events and venues
-- `/events` - All events listing
-- `/events/[slug]` - Individual event details
-- `/properties` - All venues listing
-- `/properties/[slug]` - Individual venue details
-- `/blogs` - Blog articles
-- `/contactus` - Contact information
-
-### Category Pages
-- `/office-spaces` - Coworking and office spaces
-- `/schools-universities` - Educational venues
-- `/cafes-restaurants` - Food and beverage venues
-- `/community-halls` - Community gathering spaces
 
 ## 🙏 Acknowledgments
 
